@@ -2,10 +2,10 @@
 
 Thanks for downloading this project!
 
-Project Name: Lasya Dance Studio
-Project URL: https://github.com/suhasrkms/lasya-dance-studio
-Author: Suhas R
-Author URL: https://github.com/suhasrkms 
+- Project Name: Lasya Dance Studio
+- Project URL: https://github.com/suhasrkms/lasya-dance-studio
+- Author: Suhas R
+- Author URL: https://github.com/suhasrkms 
 
 ## About Laravel
 
