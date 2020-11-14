@@ -9,16 +9,43 @@
 
 	<title>{{ config('app.name', 'Lasya') }}</title>
 
-	<!-- Scripts -->
-	<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\css\style.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+	<!-- Loding Scripts -->
+	<style>
+	.no-js #loader
+	{
+		display: none;
+	}
+	.js #loader
+	{
+		display: block;
+		position: absolute;
+		left: 100px;
+		top: 0;
+	}
+	.se-pre-con
+	{
+		position: fixed;
+		left: 0px;
+		top: 0px;
+		width: 100%;
+		height: 100%;
+		z-index: 9999;
+		background: url(assets/img/loading/Preloader_7.gif) center no-repeat #fff;
+	}
+	</style>
+
+
+<!-- Scripts -->
+<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet">
+<link href="{{ asset('assets\css\style.css') }}" rel="stylesheet">
+<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
+<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
 
 </head>
 <body>
+	<div class="se-pre-con"></div>
 	<header id="header">
 		<div class="container-fluid">
 			<div id="logo" class="pull-left">
@@ -54,7 +81,7 @@
 		</div>
 	</header><!-- #header -->
 
-		@yield('content')
+	@yield('content')
 
 	<!--==========================
 	Footer
@@ -95,6 +122,18 @@
 
 			<!-- javascript main -->
 			<script src="{{ asset('assets/js/main.js') }}"></script>
+
+			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+			<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+			<script>
+			//paste this code under head tag or in a seperate js file.
+			// Wait for window load
+			$(window).load(function()
+			{
+				// Animate loader off screen
+				$(".se-pre-con").fadeOut("slow");;
+			});
+</script>
 
 
 		</body>
