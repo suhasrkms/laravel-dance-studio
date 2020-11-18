@@ -30,111 +30,117 @@
 		width: 100%;
 		height: 100%;
 		z-index: 9999;
-		background: url(assets/img/loading/Preloader_7.gif) center no-repeat #fff;
+		background: url(/assets/img/loading/Preloader_7.gif) center no-repeat #fff;
 	}
 	</style>
 
 
-<!-- Scripts -->
-<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet">
-<link href="{{ asset('assets\css\style.css') }}" rel="stylesheet">
-<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
-<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+	<!-- Scripts -->
+	<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\css\styles.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
 
 </head>
 <body>
 	<div class="se-pre-con"></div>
-	<header id="header">
-		<div class="container-fluid">
-			<div id="logo" class="pull-left">
-				<h1><a href="{{ url('/') }}" class="scrollto">
-					LASYA
-				</a></h1>
-			</div>
-			<nav id="nav-menu-container">
-				<ul class="nav-menu">
-					@guest
-						<li class="menu-active">
-							<a href="{{ route('login') }}">{{ __('Login') }}</a>
-						</li>
-						@if(Route::has('register'))
-							<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
-						@endif
-					@else
-						<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
-							<ul>
-								<li><a href="{{ route('logout') }}"
-									onclick="event.preventDefault();
-									document.getElementById('logout-form').submit();">
-									{{ __('Logout') }}</a>
-									<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-										@csrf
-									</form>
-								</li>
-							@endguest
-						</ul>
-					</li>
-				</ul>
-			</nav><!-- #nav-menu-container -->
+	<header id="header"
+	style="background: rgba(0, 0, 0, 0.9);
+	padding: 20px 0;
+	height: 72px;
+	transition: all 0.5s;">
+	<div class="container-fluid">
+		<div id="logo" class="pull-left">
+			<h1><a href="{{ url('/') }}" class="scrollto">
+				LASYA
+			</a></h1>
 		</div>
-	</header><!-- #header -->
+		<nav id="nav-menu-container">
+			<ul class="nav-menu">
+				@guest
+					<li class="menu-active">
+						<a href="{{ route('login') }}">{{ __('Login') }}</a>
+					</li>
+					@if(Route::has('register'))
+						<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
+					@endif
+				@else
+					<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
+						<ul>
+							<li><a href="{{ url('/home') }}">Home</a></li>
+							<li><a href="/home/profile">Profile</a></li>
+							<li><a href="{{ route('logout') }}"
+								onclick="event.preventDefault();
+								document.getElementById('logout-form').submit();">
+								{{ __('Logout') }}</a>
+								<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+									@csrf
+								</form>
+							</li>
+						@endguest
+					</ul>
+				</li>
+			</ul>
+		</nav><!-- #nav-menu-container -->
+	</div>
+</header><!-- #header -->
 
-	@yield('content')
+@yield('content')
 
-	<!--==========================
-	Footer
-	============================-->
-	<footer id="footer">
-		<div class="container">
-			<div class="copyright">
-				&copy; Copyright <strong>UGHUB</strong>. All Rights Reserved <br>
-				<a href="privacypolicys.html">Privacy Policy</a>
-				<a class="pl-3" href="faqs.html">FAQ's</a>
+<!--==========================
+Footer
+============================-->
+<footer id="footer">
+	<div class="container">
+		<div class="copyright">
+			&copy; Copyright <strong>UGHUB</strong>. All Rights Reserved <br>
+			<a href="privacypolicys.html">Privacy Policy</a>
+			<a class="pl-3" href="faqs.html">FAQ's</a>
 
-			</footer><!-- #footer -->
-
-
-			<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-
-			<!-- jquerys -->
-			<script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
-			<script src="{{ asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
-
-			<!-- bootstrap -->
-			<script src="{{ asset('assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-
-			<!-- for to the top animation -->
-			<script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
-
-			<!-- superfish for slider bg adjust -->
-			<script src="{{ asset('assets/lib/superfish/hoverIntent.js') }}"></script>
-			<script src="{{ asset('assets/lib/superfish/superfish.min.js') }}"></script>
-
-			<!-- wow animation -->
-			<script src="{{ asset('assets/lib/wow/wow.min.js') }}"></script>
-
-			<!-- slider animation for sliding left or right ( swipe ) -->
-			<script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
-			<script src="{{ asset('assets/lib/touchSwipe/jquery.touchSwipe.min.js') }}"></script>
-
-			<!-- javascript main -->
-			<script src="{{ asset('assets/js/main.js') }}"></script>
-
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-			<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-			<script>
-			//paste this code under head tag or in a seperate js file.
-			// Wait for window load
-			$(window).load(function()
-			{
-				// Animate loader off screen
-				$(".se-pre-con").fadeOut("slow");;
-			});
-</script>
+		</footer><!-- #footer -->
 
 
-		</body>
-		</html>
+		<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+
+		<!-- jquerys -->
+		<script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
+		<script src="{{ asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
+
+		<!-- bootstrap -->
+		<script src="{{ asset('assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+		<!-- for to the top animation -->
+		<script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
+
+		<!-- superfish for slider bg adjust -->
+		<script src="{{ asset('assets/lib/superfish/hoverIntent.js') }}"></script>
+		<script src="{{ asset('assets/lib/superfish/superfish.min.js') }}"></script>
+
+		<!-- wow animation -->
+		<script src="{{ asset('assets/lib/wow/wow.min.js') }}"></script>
+
+		<!-- slider animation for sliding left or right ( swipe ) -->
+		<script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
+		<script src="{{ asset('assets/lib/touchSwipe/jquery.touchSwipe.min.js') }}"></script>
+
+		<!-- javascript main -->
+		<script src="{{ asset('assets/js/main.js') }}"></script>
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+
+		<!-- loading -->
+		<script>
+		$(window).load(function()
+		{
+			// Animate loader off screen
+			$(".se-pre-con").fadeOut("slow");;
+		});
+		</script>
+
+
+	</body>
+	</html>
