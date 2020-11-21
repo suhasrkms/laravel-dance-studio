@@ -67,9 +67,9 @@
 						<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
 					@endif
 				@else
+					<li><a href="{{ url('/home') }}">Home</a></li>
 					<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
 						<ul>
-							<li><a href="{{ url('/home') }}">Home</a></li>
 							<li><a href="/home/profile">Profile</a></li>
 							<li><a href="{{ route('logout') }}"
 								onclick="event.preventDefault();
