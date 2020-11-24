@@ -107,5 +107,9 @@ class ProfileController extends Controller
   public function destroy($id)
   {
     //
+    $user = Auth::user();
+    $user->delete();
+    Session::flash('message', 'Account Deleted');
+    return redirect('/home');
   }
 }

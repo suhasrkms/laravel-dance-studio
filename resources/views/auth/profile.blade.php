@@ -16,11 +16,11 @@
     <div class="row justify-content-center">
       <div class="col-lg-4">
         <h4>Profile Information</code></h5>
-          <span class="text-justify" style="padding-top:-3px;">Update your account's profile information and email address.</span>
+          <span class="text-justify mb-3" style="padding-top:-3px;">Update your account's profile information and email address.</span>
         </div>
 
         <div class="col-lg-8 text-center pt-0">
-          <div class="card py-4 mb-5 bg-white rounded" style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+          <div class="card py-4 mb-5 mt-md-3 bg-white rounded " style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
 
             {!! Form::model($user, ['method'=>'PATCH', 'action'=> ['App\Http\Controllers\ProfileController@update',$user->id]]) !!}
 
@@ -52,9 +52,8 @@
           </div>
 
           <div class="col-lg-8 text-center pt-0">
-            <div class="card py-4 mb-5 bg-white rounded" style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+            <div class="card py-4 mb-5 mt-md-3 bg-white rounded" style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
               <div class="form-group px-3 ">
-
                 {!! Form::label('current_password', 'Current Password:',['class'=>'col-12 text-left pl-0']) !!}
                 {!! Form::password('current_password', ['class'=>'col-md-8 form-control'])!!}
               </div>
@@ -79,6 +78,33 @@
           </div>
 
         </div>
+
+        <div class="border-bottom border-grey"></div>
+
+        <div class="row justify-content-center pt-5">
+          <div class="col-lg-4">
+            <h4>Delete Account</code></h5>
+              <span class="text-justify" style="padding-top:-3px;">Permanently delete your account.</span>
+            </div>
+
+            <div class="col-lg-8 pt-0">
+              <div class="card py-4 mb-5 mt-md-3 bg-white rounded" style="box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175)">
+                <div class="text-left px-3">
+                  Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
+                </div>
+
+                  {!! Form::open(['method'=>'DELETE', 'action' =>['App\Http\Controllers\ProfileController@destroy',$user->id]]) !!}
+                    <div class="form-group row mb-0 mr-4 pt-4 px-3">
+                      <div class="col-md-8 offset-l-4 text-left">
+                        {!! Form::submit('Delete Account', ['class'=>'btn btn-danger pl-3']) !!}
+                      </div>
+                    </div>
+                  {!! Form::close() !!}
+              </div>
+            </div>
+
+          </div>
+
       </div>
 
     @endsection
