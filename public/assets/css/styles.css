@@ -8,6 +8,56 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+.custom-card{
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
+  transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
+  padding: 90px;
+  cursor: pointer;
+}
+
+.custom-card:hover{
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+}
+
+.custom-card h3{
+  font-weight: 600;
+}
+
+.custom-card img{
+  position: absolute;
+  top: 20px;
+  right: 15px;
+  max-height: 120px;
+}
+
+.custom-card-1{
+  background-image: url(https://ionicframework.com/img/getting-started/ionic-native-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+
+.custom-card-2{
+  background-image: url(https://ionicframework.com/img/getting-started/components-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+
+.custom-card-3{
+  background-image: url(https://ionicframework.com/img/getting-started/theming-card.png);
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: 80px;
+}
+/*
+@media(max-width: 990px){
+
+}
+ */
 a {
   color: #18d26e;
   transition: 0.5s;
@@ -259,53 +309,53 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #intro .mouse {
-    width: 25px;
-    height: 45px;
-    border: 2px solid #fff;
-    position: absolute;
-    bottom: 40px;
-    left: 50%;
-    margin-left: -12.5px;
-    border-radius: 12px;
+  width: 25px;
+  height: 45px;
+  border: 2px solid #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -12.5px;
+  border-radius: 12px;
 }
 @-webkit-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
+  0%   {top:10px;}
+  25%  {top:14px;}
+  50%  {top:19px;}
+  75%  {top:24px;}
+  100% {top:28px;}
 }
 @-moz-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
+  0%   {top:10px;}
+  25%  {top:14px;}
+  50%  {top:19px;}
+  75%  {top:24px;}
+  100% {top:28px;}
 }
 @-o-keyframes rotateplane {
-    0%   {top:10px;}
-    25%  {top:14px;}
-    50%  {top:19px;}
-    75%  {top:24px;}
-    100% {top:28px;}
+  0%   {top:10px;}
+  25%  {top:14px;}
+  50%  {top:19px;}
+  75%  {top:24px;}
+  100% {top:28px;}
 }
 #intro .mouse::after {
-    content: "";
-    position: absolute;
-    height: 5px;
-    width: 5px;
-    background-color: #fff;
-    border-radius: 100%;
-    left: 50%;
-    top:10px;
-    margin-left: -2.5px;
-    transition:all 0.3s ease-in;
+  content: "";
+  position: absolute;
+  height: 5px;
+  width: 5px;
+  background-color: #fff;
+  border-radius: 100%;
+  left: 50%;
+  top:10px;
+  margin-left: -2.5px;
+  transition:all 0.3s ease-in;
 
-     -webkit-animation-name: rotateplane; /* Chrome, Safari, Opera */
-    -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
-    animation-name: rotateplane;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
+  -webkit-animation-name: rotateplane; /* Chrome, Safari, Opera */
+  -webkit-animation-duration: 2s; /* Chrome, Safari, Opera */
+  animation-name: rotateplane;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 /*--------------------------------------------------------------
 # Navigation Menu
