@@ -1,222 +1,154 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+@extends('layouts.app')
 
-  <meta name="csrf-token" content="{{ csrf_token() }}">
+@section('content')
 
-  <title>{{ config('app.name', 'Lasya') }}</title>
+  <div id="home-section">
+    <div class="dark-overlay">
 
-  <!-- Loding Scripts -->
-  <style>
-  .no-js #loader
-  {
-    display: none;
-  }
-  .js #loader
-  {
-    display: block;
-    position: absolute;
-    left: 100px;
-    top: 0;
-  }
-  .se-pre-con
-  {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url(assets/img/loading/Preloader_7.gif) center no-repeat #fff;
-  }
-  </style>
+      <div class="container-fluid" style="padding-top:6rem;">
 
-  <!-- Scripts -->
-  {{-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> --}}
-  <link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet" >
-  <link href="{{ asset('assets\css\styles.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+        <div class="row px-4">
 
-</head>
-<body>
-  <div class="se-pre-con"></div>
-  <header id="header"
-  style="background: rgba(0, 0, 0, 0.9);
-  padding: 20px 0;
-  height: 72px;
-  transition: all 0.5s;">
-  <div class="container-fluid">
-    <div id="logo" class="pull-left">
-      <h1><a href="{{ url('/') }}" class="scrollto">
-        LASYA
-      </a></h1>
-    </div>
-    <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        @guest
-          <li class="menu-active">
-            <a href="{{ route('login') }}">{{ __('Login') }}</a>
-          </li>
-          @if(Route::has('register'))
-            <li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
-          @endif
-        @else
-          <li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
-            <ul>
-              <li><a href="/home/profile/{{ Auth::user()->id }}/edit">Profile</a></li>
-              <li><a href="{{ route('logout') }}"
-                onclick="event.preventDefault();
-                document.getElementById('logout-form').submit();">
-                {{ __('Logout') }}</a>
-                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                  @csrf
-                </form>
-              </li>
-            @endguest
-          </ul>
-        </li>
-      </ul>
-    </nav><!-- #nav-menu-container -->
-  </div>
-</header><!-- #header -->
-
-<body style="padding-top:6rem;">
-  <section style="min-height:500px;">
-    <div class="container-fluid">
-
-      <div class="row px-4">
-
-        <div class="col-md-3 px-3">
-          <div class="card">
-            <div class="card-header">
-              Featured
+          <div class="col-md-3 px-3">
+            <div class="card">
+              <div class="card-header">
+                Featured
+              </div>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">Cras justo odio</li>
+                <li class="list-group-item bg-light">Dapibus ac facilisis in</li>
+                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item text-center">
+                  <a href="/Account/Login" class="btn btn-info btn-block">Login/Register</a></td>
+                </li>
+              </ul>
             </div>
-            <ul class="list-group list-group-flush">
-              <li class="list-group-item">Cras justo odio</li>
-              <li class="list-group-item">Dapibus ac facilisis in</li>
-              <li class="list-group-item">Vestibulum at eros</li>
-              <li class="list-group-item text-center">
-                <a href="/Account/Login" class="btn btn-info btn-block">Login/Register</a></td>
-              </li>
-            </ul>
           </div>
-        </div>
 
-        <div class="col-md-9 p-md-0 p-3">
-          <div class="row">
+          <div class="col-md-9 p-md-0 p-3">
+            <div class="row">
 
-            <div class="col-sm-4">
-              <div class="custom-card custom-card-1">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4">
+                <div class="custom-card custom-card-1">
+                  <div class="custom-card-body text-left">
+                    <h3>Card title</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-4 pt-md-0 pt-3">
-              <div class="custom-card custom-card-2">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4 pt-md-0 pt-3">
+                <div class="custom-card custom-card-2">
+                  <div class="custom-card-body text-left">
+                    <h3>Card title</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-4 pt-md-0 pt-3">
-              <div class="custom-card custom-card-3">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4 pt-md-0 pt-3">
+                <div class="custom-card custom-card-3">
+                  <div class="custom-card-body text-left">
+                    <h3>Card title</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-4 pt-3">
-              <div class="custom-card custom-card-3">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4 pt-3">
+                <div class="custom-card custom-card-3">
+                  <div class="custom-card-body text-left">
+                    <h3>Card title</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-4 pt-3">
-              <div class="custom-card custom-card-1">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4 pt-3" >
+                <div class="custom-card custom-card-1" style="padding:75px;"> 
+                  <div class="custom-card-body text-left">
+                    <h3 class="text-center">Calender of Events</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div class="col-sm-4 pt-3">
-              <div class="custom-card custom-card-2">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+              <div class="col-sm-4 p-3">
+                <div class="custom-card custom-card-2">
+                  <div class="custom-card-body text-left">
+                    <h3>Card title</h3>
+                  </div>
                 </div>
               </div>
-            </div>
 
             </div>
           </div>
         </div>
       </div>
-</section>
-</body>
+    </section>
+  </div>
+</div>
+
+
 <!--==========================
-Footer
+Contact US
 ============================-->
-<footer id="footer" >
+<section id="contact" class="section-bg wow fadeInUp">
   <div class="container">
-    <div class="copyright">
-      &copy; Copyright <strong>Lasya</strong>. All Rights Reserved <br>
-      <a href="privacypolicys.html">Privacy Policy</a>
-      <a class="pl-3" href="faqs.html">FAQ's</a>
 
-    </footer><!-- #footer -->
+    <div class="section-header">
+      <h3>Contact Us</h3>
+      <p>Satisifed or not we need to know your ever feedback towards UGHUB ...<br> So fell free to contact us or mail upon</p>
+    </div>
 
+    <div class="row contact-info">
 
-    <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+      <div class="col-md-4">
+        <div class="contact-address">
+          <i class="ion-ios-location-outline"></i>
+          <h3>Address</h3>
+          <address>Bengaluru, Karnataka - 560061, INDIA</address>
+        </div>
+      </div>
 
+      <div class="col-md-4">
+        <div class="contact-phone">
+          <i class="ion-ios-telephone-outline"></i>
+          <h3>Phone Number</h3>
+          <p>+91 9945887177</p>
+        </div>
+      </div>
 
-    <!-- jquerys -->
-    <script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
+      <div class="col-md-4">
+        <div class="contact-email">
+          <i class="ion-ios-email-outline"></i>
+          <h3>Email</h3>
+          <p><a href="mailto:support@ughub.in">support@ughub.in</a></p>
+        </div>
+      </div>
 
-    <!-- bootstrap -->
-    <script src="{{ asset('assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+    </div>
+    <div class="form">
+      <div id="sendmessage">Your message has been sent. Thank you!</div>
+      <div id="errormessage"></div>
+      <form action="" method="post" role="form" class="contactForm">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <input type="text" name="name" class="form-control" id="name" placeholder="{{ Auth::user()->name }}" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+            <div class="validation"></div>
+          </div>
+          <div class="form-group col-md-6">
+            <input type="email" class="form-control" name="email" id="email" placeholder="{{ Auth::user()->email }}" data-rule="email" data-msg="Please enter a valid email" />
+            <div class="validation"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+          <div class="validation"></div>
+        </div>
+        <div class="form-group">
+          <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+          <div class="validation"></div>
+        </div>
+        <div class="text-center"><button type="submit">Send Message</button></div>
+      </form>
+    </div>
+  </div>
+</section><!-- #contact -->
 
-    <!-- for to the top animation -->
-    <script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
-
-    <!-- superfish for slider bg adjust -->
-    <script src="{{ asset('assets/lib/superfish/hoverIntent.js') }}"></script>
-    <script src="{{ asset('assets/lib/superfish/superfish.min.js') }}"></script>
-
-    <!-- wow animation -->
-    <script src="{{ asset('assets/lib/wow/wow.min.js') }}"></script>
-
-    <!-- slider animation for sliding left or right ( swipe ) -->
-    <script src="{{ asset('assets/lib/waypoints/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/lib/touchSwipe/jquery.touchSwipe.min.js') }}"></script>
-
-    <!-- javascript main -->
-    <script src="{{ asset('assets/js/main.js') }}"></script>
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-
-    <!-- loading -->
-    <script>
-    $(window).load(function()
-    {
-      // Animate loader off screen
-      $(".se-pre-con").fadeOut("slow");;
-    });
-    </script>
-
-
-  </body>
-  </html>
+@endsection
