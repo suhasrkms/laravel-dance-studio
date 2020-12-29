@@ -34,13 +34,14 @@
 	}
 	</style>
 
-  <!-- Scripts -->
-  <link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet" >
-  <link href="{{ asset('assets\css\styles.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
-  <link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+	<!-- Scripts -->
+	<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet" >
+	<link href="{{ asset('assets\css\styles.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\css\responsive.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -50,18 +51,18 @@
 				<h1><a href="#intro" class="scrollto">LASYA</a></h1>
 			</div>
 			<nav id="nav-menu-container">
-            @if (Route::has('login'))
-              				<ul class="nav-menu">
-              @auth
-					<li class="menu-active"><a href="{{ url('/home') }}">Home</a></li>
-        @else
-					<li><a href="{{ route('login') }}">Login</a></li>
-            @if (Route::has('register'))
-					<li><a href="{{ route('register') }}">Register</a></li>
-        @endif
-    @endif
-				</ul>
-    @endif
+				@if (Route::has('login'))
+					<ul class="nav-menu">
+						@auth
+							<li class="menu-active"><a href="{{ url('/home') }}">Home</a></li>
+						@else
+							<li><a href="{{ route('login') }}">Login</a></li>
+							@if (Route::has('register'))
+								<li><a href="{{ route('register') }}">Register</a></li>
+							@endif
+						@endif
+					</ul>
+				@endif
 			</nav><!-- #nav-menu-container -->
 		</div>
 	</header><!-- #header -->
@@ -120,190 +121,222 @@
 	</section><!-- #intro -->
 
 	<!--==========================
-      About Us Section
-    ============================-->
+	About Us Section
+	============================-->
 	<section id="about">
-      <div class="container">
+		<div class="container">
+			<header class="section-header">
+				<h3>About Us</h3>
+				<p>
+					As friends we are ready to accompany you with your journey of undergraduate studies, we are with full confident on make your UG college studies easy and valuable,UG hub is a concept of friend teaching his best friend. I am ready with all the tools that makes you a best student in your academic year.
+				</p>
+			</header>
 
-        <header class="section-header">
-          <h3>About Us</h3>
-          <p>
-			As friends we are ready to accompany you with your journey of undergraduate studies, we are with full confident on make your UG college studies easy and valuable,UG hub is a concept of friend teaching his best friend. I am ready with all the tools that makes you a best student in your academic year.
-		  </p>
-        </header>
+			<div class="row about-cols">
 
-        <div class="row about-cols">
-
-          <div class="col-md-4 wow fadeInUp">
-            <div class="about-col">
-              <div class="img">
-                <img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Mission</a></h2>
-              <p>
-                We bring up experiencing learning into education system. Philosophy of education has been defined as an attempt to find answers to questions. Our attempts is find answers through craft, art, health and education should all be integrated into one scheme.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
-            <div class="about-col">
-              <div class="img">
-                <img src="assets/img/about-plan.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-list-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Plan</a></h2>
-              <p>
-                For those who do have access to the right technology, there is evidence that learning online can be more effective in a number of ways. It enables us to reach out to Learners more effectively through Digital medium. Hence we are ready with best platform called UGhub.
-              </p>
-            </div>
-          </div>
-
-          <div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
-            <div class="about-col">
-              <div class="img">
-                <img src="assets/img/about-vision.jpg" alt="" class="img-fluid">
-                <div class="icon"><i class="ion-ios-eye-outline"></i></div>
-              </div>
-              <h2 class="title"><a href="#">Our Vision</a></h2>
-              <p>
-                Adopting digital technology in education is the most cost-effective way to drive economic development, That's why we’ll continue directing our program, toward a future version learning where every student will have access to the quality education they deserve.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- #about -->
+				<div class="col-md-4 wow fadeInUp">
+					<div class="about-col">
+						<div class="img">
+							<img src="assets/img/about-mission.jpg" alt="" class="img-fluid">
+							<div class="icon"><i class="ion-ios-speedometer-outline"></i></div>
+						</div>
+						<h2 class="title"><a href="#">Our Mission</a></h2>
+						<p>
+							We bring up experiencing learning into education system. Philosophy of education has been defined as an attempt to find answers to questions. Our attempts is find answers through craft, art, health and education should all be integrated into one scheme.
+						</p>
+					</div>
+				</div>
 
 
-		<section id="portfolio">
-        <div class="container">
-            <div class="center">
-               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sed do eiusmod tempor incididunt</p>
-            </div>
+				<div class="col-md-4 wow fadeInUp" data-wow-delay="0.1s">
+					<div class="about-col">
+						<div class="img">
+							<img src="assets/img/about-plan.jpg" alt="" class="img-fluid">
+							<div class="icon"><i class="ion-ios-list-outline"></i></div>
+						</div>
+						<h2 class="title"><a href="#">Our Plan</a></h2>
+						<p>
+							For those who do have access to the right technology, there is evidence that learning online can be more effective in a number of ways. It enables us to reach out to Learners more effectively through Digital medium. Hence we are ready with best platform called UGhub.
+						</p>
+					</div>
+				</div>
 
-            <ul class="portfolio-filter text-center">
-                <li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
-                <li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
-            </ul><!--/#portfolio-filter-->
+				<div class="col-md-4 wow fadeInUp" data-wow-delay="0.2s">
+					<div class="about-col">
+						<div class="img">
+							<img src="assets/img/about-vision.jpg" alt="" class="img-fluid">
+							<div class="icon"><i class="ion-ios-eye-outline"></i></div>
+						</div>
+						<h2 class="title"><a href="#">Our Vision</a></h2>
+						<p>
+							Adopting digital technology in education is the most cost-effective way to drive economic development, That's why we’ll continue directing our program, toward a future version learning where every student will have access to the quality education they deserve.
+						</p>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section><!-- #about -->
+
+	<section id="portfolio">
+		<div class="container">
+			<div class="center">
+				<h2>Portfolio</h2>
+				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+			</div>
+
+			<ul class="portfolio-filter text-center">
+				<li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
+			</ul><!--/#portfolio-filter-->
 		</div>
 		<div class="container">
-            <div class="">
-                <div class="portfolio-items">
-                    <div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item1.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item1.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item joomla bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item2.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item2.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+			<div class="portfolio-items">
 
-                    <div class="portfolio-item bootstrap wordpress col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item3.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item3.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+				<div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item1.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</img>
+					</div>
+				</div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item joomla wordpress apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item4.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="images/portfolio/full/item4.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+				<!-- Modal -->
+				<div id="myModal" class="modal fade" role="dialog">
+					<div class="modal-dialog">
 
-                    <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item5.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item5.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+						<!-- Modal content-->
+						<div class="modal-content">
+							<div class="modal-header">
+								<h4 class="modal-title">Modal Header</h4>
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+							</div>
+							<div class="modal-body">
+								<p>Some text in the modal.</p>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+							</div>
+						</div>
 
-                    <div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item6.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item6.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+					</div>
+				</div>
 
-                    <div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item7.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item7.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
+				<div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item4.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/.portfolio-item-->
 
-                    <div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-                        <div class="recent-work-wrap">
-                            <img class="img-responsive" src="assets/img/portfolio/recent/item8.png" alt="">
-                            <div class="overlay">
-                                <div class="recent-work-inner">
-                                    <h3><a href="#">Business theme</a></h3>
-                                    <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
-                                    <a class="preview" href="assets/img/portfolio/full/item8.png" rel="prettyPhoto"><i class="fa fa-eye"></i> View</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!--/.portfolio-item-->
-                </div>
-            </div>
-        </div>
-    </section><!--/#portfolio-item-->
+				<div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item5.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/.portfolio-item-->
 
-  <!--==========================
+				<div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item6.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/.portfolio-item-->
+
+				<div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item7.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/.portfolio-item-->
+
+				<div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
+					<div class="recent-work-wrap">
+						<img class="img-responsive" src="assets/img/portfolio/recent/item8.png" alt="">
+						<div class="overlay">
+							<div class="recent-work-inner">
+								<div class="text-dark display-4 pt-4">Name</div>
+								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+							</div>
+						</div>
+					</div>
+				</div><!--/.portfolio-item-->
+
+			</div>
+		</div>
+	</section><!--/#portfolio-item-->
+
+	<!--==========================
+	Contact US
+	============================-->
+	<section id="contact" class="section-bg wow fadeInUp">
+	  <div class="container">
+
+	    <div class="section-header">
+	      <h3>Contact Us</h3>
+	    </div>
+
+	    <div class="row contact-info">
+
+	      <div class="col-md-4">
+	        <div class="contact-address">
+	          <i class="ion-ios-location-outline"></i>
+	          <h3>Address</h3>
+	          <address>Bengaluru, Karnataka - 560061, INDIA</address>
+	        </div>
+	      </div>
+
+	      <div class="col-md-4">
+	        <div class="contact-phone">
+	          <i class="ion-ios-telephone-outline"></i>
+	          <h3>Phone Number</h3>
+	          <p>+91 9945887177</p>
+	        </div>
+	      </div>
+
+	      <div class="col-md-4">
+	        <div class="contact-email">
+	          <i class="ion-ios-email-outline"></i>
+	          <h3>Email</h3>
+	          <p><a href="mailto:support@ughub.in">support@ughub.in</a></p>
+	        </div>
+	      </div>
+
+	    </div>
+
+	  </div>
+	</section><!-- #contact -->
+
+	<!--==========================
 	Footer
 	============================-->
 	<footer id="footer">
@@ -319,13 +352,15 @@
 			<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
 
 
-      <!-- jquerys -->
+			<!-- jquerys -->
 			<script src="{{ asset('assets/lib/jquery/jquery.min.js') }}"></script>
 			<script src="{{ asset('assets/lib/jquery/jquery-migrate.min.js') }}"></script>
-			<script src="{{ asset('assets/lib/jquery/jquery.isotope.min.js') }}"></script>
 
 			<!-- bootstrap -->
 			<script src="{{ asset('assets/lib/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+
+			<!-- for to the isotope -->
+			<script src="{{ asset('assets/lib/isotope/jquery.isotope.min.js') }}"></script>
 
 			<!-- for to the top animation -->
 			<script src="{{ asset('assets/lib/easing/easing.min.js') }}"></script>
@@ -345,10 +380,6 @@
 			<script src="{{ asset('assets/js/main.js') }}"></script>
 
 			<!-- javascript main -->
-			<script src="{{ asset('assets/lib/functions/functions.js') }}"></script>
-
-			<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
-			<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
 			<!-- loading -->
 			<script>

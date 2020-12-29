@@ -24,4 +24,6 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/home/profile', ProfileController::class)->middleware('auth');
 
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('isAdmin');
+
 //Route::get('/profile', [ProfileController::class, 'edit']);

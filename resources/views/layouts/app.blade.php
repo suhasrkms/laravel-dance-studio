@@ -67,7 +67,10 @@
 						<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
 					@endif
 				@else
-					<li><a href="{{ url('/home') }}">Home</a></li>
+						<li><a href="{{ url('/home') }}">Home</a></li>
+							@if(Auth::user()->role == 'admin')
+								<li><a href="{{ url('/admin') }}">Admin</a></li>
+							@endif
 					<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
 						<ul>
 							<li><a href="/home/profile">Profile</a></li>
