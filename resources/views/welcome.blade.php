@@ -43,6 +43,9 @@
 	<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets\css\responsive.css') }}" rel="stylesheet">
 
+
+	<script src="{{ asset('assets/js/jquery-2.1.4.min.js') }}"></script>
+
 </head>
 <body>
 	<header id="header">
@@ -178,6 +181,50 @@
 
 		</div>
 	</section><!-- #about -->
+
+
+	<section>
+		<!-- statistics -->
+	<div class="statistics">
+		<div class="container" style="padding-top:50px; padding-bottom:20px;">
+			<div class="row">
+			<div class="col-md-6">
+				<div class="">
+					<div class="embed-responsive embed-responsive-16by9">
+  						<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
+							{{-- https://www.youtube.com/embed/75aEgBYaex --}}
+					</div>
+					{{-- <img src="https://www.youtube.com/watch?v=zJSP3I1lCco" class="img-responsive img-fluid"></img>
+					<a class="w3ls_play_icon popup-with-zoom-anim" href="#small-dialog">
+						<i class="fa fa-play" aria-hidden="true"></i>
+					</a> --}}
+				</div>
+			</div>
+			<div class="col-md-6 pt-4 text-light">
+				<h4>Nulla faucibus mauris ac leo imperdiet, id auctor urna consectetur</h4>
+				<div class="row text-center pt-4 pt-md-0">
+				<div class="col-md-4">
+					<h3 id="w3l_stats1" class="odometer">0</h3>
+					<p>Years of Experience</p>
+				</div>
+				<div class="col-md-4">
+					<h3 id="w3l_stats2" class="odometer">0</h3>
+					<p>Awards Winning</p>
+				</div>
+				<div class="col-md-4">
+					<h3 id="w3l_stats3" class="odometer">0</h3>
+					<p>Students</p>
+				</div>
+
+				</div>
+			</div>
+		</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //statistics -->
+	</section>
+
 
 	<section id="portfolio">
 		<div class="container">

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
+use App\Models\Events;
 
-class AdminController extends Controller
+class AdminEventsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class AdminController extends Controller
     public function index()
     {
         //
-        $users = Auth::user()->all();
-        return view('admin.index',compact('users'));
+        $events = Events::all();
+        return view('admin.events.index',compact('events'));
     }
 
     /**
@@ -27,6 +27,7 @@ class AdminController extends Controller
     public function create()
     {
         //
+        return view('admin.events.create');
     }
 
     /**
@@ -38,15 +39,18 @@ class AdminController extends Controller
     public function store(Request $request)
     {
         //
+        $input = $request->all();
+        Events::create($input);
+        return redirect('/admin/events');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\odel  $odel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(odel $odel)
+    public function show($id)
     {
         //
     }
@@ -54,10 +58,10 @@ class AdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\odel  $odel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(odel $odel)
+    public function edit($id)
     {
         //
     }
@@ -66,10 +70,10 @@ class AdminController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\odel  $odel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, odel $odel)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -77,10 +81,10 @@ class AdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\odel  $odel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(odel $odel)
+    public function destroy($id)
     {
         //
     }

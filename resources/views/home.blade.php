@@ -4,7 +4,6 @@
 
   <div id="home-section">
     <div class="dark-overlay">
-
       <div class="container-fluid" style="padding-top:6rem;">
 
         <div class="row px-4">
@@ -12,15 +11,41 @@
           <div class="col-md-3 px-3">
             <div class="card">
               <div class="card-header">
-                Featured
+                Classes ( <span class="text-primary">{{ Carbon\Carbon::now()->format("d-m-Y") }}</span> )
               </div>
               <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item bg-light">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+
+                @if (count($events->where('event_type','class')) == 0)
+                  <li class="list-group-item">No Classes Scheduled</li>
+                @endif
+
+                @foreach ($events->where('event_type','class') as $event)
+
+                  <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('H:i') }}</li>
+
+                @endforeach
+
                 <li class="list-group-item text-center">
-                  <a href="/Account/Login" class="btn btn-info btn-block">Login/Register</a></td>
+                  <a href="/Account/Login" class="btn btn-info btn-block">See All Classes</a></td>
                 </li>
+              </ul>
+            </div>
+
+            <div class="card mt-4">
+              <div class="card-header">
+                Events
+              </div>
+              <ul class="list-group list-group-flush">
+                @if (count($events->where('event_type','event')) == 0)
+                  <a href="#" class="text-primary">
+                    <li class="list-group-item">No Upcoming Events ...</li>
+                  </a>
+                @endif
+
+                @foreach ($events->where('event_type','event') as $event)
+
+                  <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('H:i') }}</li>
+                @endforeach
               </ul>
             </div>
           </div>
@@ -61,7 +86,7 @@
               </div>
 
               <div class="col-sm-4 pt-3" >
-                <div class="custom-card custom-card-1" style="padding:75px;"> 
+                <div class="custom-card custom-card-1" style="padding:75px;">
                   <div class="custom-card-body text-left">
                     <h3 class="text-center">Calender of Events</h3>
                   </div>
@@ -83,7 +108,6 @@
     </section>
   </div>
 </div>
-
 
 <!--==========================
 Contact US

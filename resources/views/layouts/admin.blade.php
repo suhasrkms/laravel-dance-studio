@@ -58,6 +58,7 @@
           <div id="collapseUsers" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
               <a class="collapse-item" href="{{ url('/admin/users') }}">All Users</a>
+              <a class="collapse-item" href="{{ url('/admin/users/create') }}">Create User</a>
             </div>
           </div>
         </li>
@@ -66,11 +67,12 @@
         <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true" aria-controls="collapseUsers">
             <i class="fa fa-book"></i>
-            <span>Course</span>
+            <span>Events</span>
           </a>
           <div id="collapseCourse" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{ url('/admin/courses') }}">All Course</a>
+              <a class="collapse-item" href="{{ url('/admin/events') }}">All Events</a>
+              <a class="collapse-item" href="{{ url('/admin/events/create') }}">Create Event</a>
             </div>
           </div>
         </li>
@@ -234,6 +236,11 @@
     <!-- Page level plugins -->
     <script src="{{ asset('assets\admin\vendor\datatables\jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets\admin\vendor\datatables\dataTables.bootstrap4.min.js') }}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+          $('#example').DataTable();
+        } );
+    </script>
 
     <!-- Page level custom scripts -->
     <script src="{{ asset('assets\admin\js\demo\datatables-demo.js') }}"></script>

@@ -24,6 +24,11 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::resource('/home/profile', ProfileController::class)->middleware('auth');
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('isAdmin');
+Route::resource('/user/profile',App\Http\Controllers\UserProfileController::class)->middleware('auth');
 
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('isAdmin','auth');
+
+Route::resource('/admin/users', App\Http\Controllers\AdminUsersController::class)->middleware('auth','isAdmin');
+
+Route::resource('/admin/events', App\Http\Controllers\AdminEventsController::class)->middleware('auth','isAdmin');
 //Route::get('/profile', [ProfileController::class, 'edit']);
