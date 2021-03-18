@@ -4,14 +4,24 @@
 
   <div class="container" style="min-height:580px; padding-top:7rem; color:black;">
     @if(Session::has('message'))
-      <p class="alert {{ Session::get('alert-class', 'alert-info') }}">{{ Session::get('message') }}</p>
+      <div class="alert alert-info alert-dismissible fade show" role="alert">
+        <strong>{{ Session::get('message') }}</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
     @endif
+
     @if ($errors->any())
-        <ul class="alert alert-danger">
-          @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-          @endforeach
-        </ul>
+        @foreach ($errors->all() as $error)
+          <li>{{ $error }}</li>
+          <div class="alert alert-info alert-dismissible fade show" role="alert">
+            <strong>{{ $error }}</strong>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        @endforeach
     @endif
     <div class="row justify-content-center">
       <div class="col-lg-4">
@@ -93,18 +103,18 @@
                   Once your account is deleted, all of its resources and data will be permanently deleted. Before deleting your account, please download any data or information that you wish to retain.
                 </div>
 
-                  {!! Form::open(['method'=>'DELETE', 'action' =>['App\Http\Controllers\ProfileController@destroy',$user->id]]) !!}
-                    <div class="form-group row mb-0 mr-4 pt-4 px-3">
-                      <div class="col-md-8 offset-l-4 text-left">
-                        {!! Form::submit('Delete Account', ['class'=>'btn btn-danger pl-3']) !!}
-                      </div>
-                    </div>
-                  {!! Form::close() !!}
+                {!! Form::open(['method'=>'DELETE', 'action' =>['App\Http\Controllers\ProfileController@destroy',$user->id]]) !!}
+                <div class="form-group row mb-0 mr-4 pt-4 px-3">
+                  <div class="col-md-8 offset-l-4 text-left">
+                    {!! Form::submit('Delete Account', ['class'=>'btn btn-danger pl-3']) !!}
+                  </div>
+                </div>
+                {!! Form::close() !!}
               </div>
             </div>
 
           </div>
 
-      </div>
+        </div>
 
-    @endsection
+      @endsection

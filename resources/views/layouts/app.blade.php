@@ -42,6 +42,7 @@
 	<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets\lib\ionicons\css\ionicons.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets\lib\owlcarousel\assets\owl.carousel.min.css') }}" rel="stylesheet">
+	<link href="{{ asset('assets\lib\toastr\toastr.css') }}" rel="stylesheet">
 
 </head>
 <body>
@@ -132,6 +133,10 @@ Footer
 		<!-- javascript main -->
 		<script src="{{ asset('assets/js/main.js') }}"></script>
 
+		<!-- javascript error -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
 		<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
 
@@ -144,6 +149,17 @@ Footer
 		});
 		</script>
 
+		{{-- Erroe Model --}}
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+		@yield('javascript')
+
+		{{-- <script>
+		$(document).ready(function(){
+			$("#myModal").modal('show');
+		});
+		</script> --}}
 
 	</body>
 	</html>

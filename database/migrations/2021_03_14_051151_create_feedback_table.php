@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUsersProfilesTable extends Migration
+class CreateFeedbackTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateUsersProfilesTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_profiles', function (Blueprint $table) {
+        Schema::create('feedback', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
-            $table->bigInteger('phone_no');
-            $table->integer('age');
-            $table->string('style');
-            $table->string('prefered_batch');
-            $table->string('final_batch');
+            $table->string('subject');
+            $table->string('message');
             $table->timestamps();
         });
     }
@@ -32,6 +29,6 @@ class CreateUsersProfilesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users_profiles');
+        Schema::dropIfExists('feedback');
     }
 }

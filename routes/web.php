@@ -20,7 +20,11 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('validateProfile')->name('home');
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->middleware('validateProfile')->name('home');
+
+Route::resource('/home', App\Http\Controllers\HomeController::class)->parameters([
+    'index' => 'home'
+]);
 
 Route::resource('/home/profile', ProfileController::class)->middleware('auth');
 
