@@ -191,13 +191,13 @@
 			<div class="col-md-6">
 				<div class="">
 					<div class="embed-responsive embed-responsive-16by9">
-  						<iframe class="embed-responsive-item" src="" allowfullscreen></iframe>
-							{{-- https://www.youtube.com/embed/75aEgBYaex --}}
+  						<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/UhVjp48U2Oc" allowfullscreen></iframe>
+							<!-- https://www.youtube.com/embed/UhVjp48U2Oc -->
 					</div>
-					{{-- <img src="https://www.youtube.com/watch?v=zJSP3I1lCco" class="img-responsive img-fluid"></img>
+					<!-- <img src="https://www.youtube.com/embed/UhVjp48U2Oc" class="img-responsive img-fluid"></img>
 					<a class="w3ls_play_icon popup-with-zoom-anim" href="#small-dialog">
 						<i class="fa fa-play" aria-hidden="true"></i>
-					</a> --}}
+					</a> -->
 				</div>
 			</div>
 			<div class="col-md-6 pt-4 text-light">

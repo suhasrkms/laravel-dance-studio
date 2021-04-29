@@ -34,7 +34,7 @@
       </div>
 
       <div class="form-group">
-        {!! Form::label('event_info', 'Information') !!}
+        {!! Form::label('event_info', 'Information / Address') !!}
         {!! Form::textarea('event_info', null, ['class'=>'form-control', 'rows' => 3, 'cols' => 40])!!}
       </div>
       <div class="form-group">

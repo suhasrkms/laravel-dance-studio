@@ -4,9 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Events;
-use Carbon\Carbon;
+use Auth;
 
-class AdminEventsController extends Controller
+class EventsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,9 @@ class AdminEventsController extends Controller
     public function index()
     {
         //
-        $events = Events::all();
-        return view('admin.events.index',compact('events'));
+        $day="Nil";
+        $events=Events::all();
+        return view('users.events',compact('events','day'));
     }
 
     /**
@@ -28,7 +29,6 @@ class AdminEventsController extends Controller
     public function create()
     {
         //
-        return view('admin.events.create');
     }
 
     /**
@@ -40,9 +40,14 @@ class AdminEventsController extends Controller
     public function store(Request $request)
     {
         //
-        $input = $request->all();
-        Events::create($input);
-        return redirect('/admin/events');
+        $input = $request->except('name','email',Auth::user()->id);
+        $request->validate([
+          'subject' => 'required|min:8|max:24',
+          'message' => 'required|max:100|min:8',
+        ]);
+        Feedback::create($input);
+        Session::flash('message', 'Feedback Sent');
+        return back()->withInput();
     }
 
     /**
