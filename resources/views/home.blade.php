@@ -225,11 +225,13 @@ setTimeout(
             </div>
 
             <div class="col-sm-4 p-3">
+              <a href="/home/profile">
               <div class="custom-card custom-card-2">
                 <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+                  <h3 class="text-dark">Profile</h3>
                 </div>
               </div>
+              </a>
             </div>
 
           </div>
