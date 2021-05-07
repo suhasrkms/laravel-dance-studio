@@ -82,10 +82,10 @@
 				<div class="carousel-inner" role="listbox">
 
 					<div class="carousel-item active">
-						<div class="carousel-background"><img src="assets/img/intro-carousel/1.jpg" alt=""></div>
+						<div class="carousel-background"><img src="assets/img/intro-carousel/1.png" alt=""></div>
 						<div class="carousel-container" style="justify-content: center; align-items: center;">
 							<div class="carousel-content">
-								<h2 class="p-5">Online learning is the future of education, and it is happening right now all around us.</h2>
+								<h2 class="p-5">To dance is to be out of yourself. Larger, more beautiful, more powerful ...</h2>
 								<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 								<a href="#featured-services" class="btn-get-started scrollto">Get Started</a>-->
 							</div>
@@ -98,7 +98,7 @@
 						<div class="carousel-background"><img src="assets/img/intro-carousel/2.jpg" alt=""></div>
 						<div class="carousel-container">
 							<div class="carousel-content">
-								<h2 class="p-5">We need to bring learning to people instead of people to learning</h2>
+								<h2 class="p-5">Dance is not about your age or how good you are. It's about supporting each other, and having fun </h2>
 								<!--<p>Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum.</p>
 								<a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
 							</div>
@@ -109,8 +109,7 @@
 						<div class="carousel-background"><img src="assets/img/intro-carousel/3.jpg" alt=""></div>
 						<div class="carousel-container">
 							<div class="carousel-content">
-								<h2 class="p-5">People expect to be bored by E-Learning, let's show them its doesn't have to be like that!</h2>
-								<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+								<h2 class="p-5">There are shortcuts to happiness and dancing is one of them.</h2>								<!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
 								<a href="#featured-services" class="btn-get-started scrollto">Get Started</a> -->
 							</div>
 						</div>
@@ -131,7 +130,8 @@
 			<header class="section-header">
 				<h3>About Us</h3>
 				<p>
-					As friends we are ready to accompany you with your journey of undergraduate studies, we are with full confident on make your UG college studies easy and valuable,UG hub is a concept of friend teaching his best friend. I am ready with all the tools that makes you a best student in your academic year.
+					{{-- As friends we are ready to accompany you with your journey of undergraduate studies, we are with full confident on make your UG college studies easy and valuable,UG hub is a concept of friend teaching his best friend. I am ready with all the tools that makes you a best student in your academic year. --}}
+					The term ‘Lasya‘, in the context of Hindu Mythology, stands for the dance performed by Goddess Parvati. Lasya means beauty, happiness and grace. Lasya Dance Studio is an institution that share the happiness, grace rhythm of dance. Join us and explore the glimpse of dance.
 				</p>
 			</header>
 
@@ -204,15 +204,15 @@
 				<h4>Nulla faucibus mauris ac leo imperdiet, id auctor urna consectetur</h4>
 				<div class="row text-center pt-4 pt-md-0">
 				<div class="col-md-4">
-					<h3 id="w3l_stats1" class="odometer">0</h3>
+					<h3 id="w3l_stats1" class="odometer">10</h3>
 					<p>Years of Experience</p>
 				</div>
 				<div class="col-md-4">
-					<h3 id="w3l_stats2" class="odometer">0</h3>
+					<h3 id="w3l_stats2" class="odometer">3</h3>
 					<p>Awards Winning</p>
 				</div>
 				<div class="col-md-4">
-					<h3 id="w3l_stats3" class="odometer">0</h3>
+					<h3 id="w3l_stats3" class="odometer">{{ $count }}</h3>
 					<p>Students</p>
 				</div>
 
@@ -227,49 +227,102 @@
 
 
 	<section id="portfolio">
+
 		<div class="container">
 			<div class="center">
 				<h2>Our Teachers</h2>
 				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+
+
 			</div>
 
 			<ul class="portfolio-filter text-center">
 				<li><a class="btn btn-default active" href="#" data-filter="*">All Works</a></li>
-				<li><a class="btn btn-default" href="#" data-filter=".bootstrap">Creative</a></li>
-				<li><a class="btn btn-default" href="#" data-filter=".html">Photography</a></li>
-				<li><a class="btn btn-default" href="#" data-filter=".wordpress">Web Development</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".Western">Western</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".Contemporary">Contemporary</a></li>
+				<li><a class="btn btn-default" href="#" data-filter=".Bharatanatyam">Bharatanatyam</a></li>
 			</ul><!--/#portfolio-filter-->
 		</div>
 		<div class="container">
 
 			<div class="portfolio-items">
+				@foreach ($teachers as $teacher)
 
-				<div class="portfolio-item apps col-xs-12 col-sm-4 col-md-3">
-					<div class="recent-work-wrap">
-						<img class="img-responsive" src="assets/img/portfolio/recent/item1.png" alt="">
-						<div class="overlay">
-							<div class="recent-work-inner">
-								<div class="text-dark display-4 pt-4">Name</div>
-								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
+					<div class="portfolio-item {{ $teacher->style }} col-xs-12 col-sm-4 col-md-3">
+						<div class="recent-work-wrap">
+							<img class="img-responsive pl-3" style="height:220px; width:290px;" src="/TeachersImages/{{ $teacher->dp_path }}" alt="">
+							<div class="overlay">
+								<div class="recent-work-inner">
+									<div class="text-dark display-4 pt-4">{{ $teacher->name }}</div>
+									<a href="" data-toggle="modal" data-target="#{{ $teacher->id }}" class="text-primary"><i class="fa fa-eye"></i> View</a>
+								</div>
 							</div>
+							</img>
 						</div>
-					</img>
-					</div>
-				</div><!--/.portfolio-item-->
+					</div><!--/.portfolio-item-->
+
 
 				<!-- Modal -->
-				<div id="myModal" class="modal fade" role="dialog">
-					<div class="modal-dialog">
+				<div id="{{ $teacher->id }}" class="modal fade" role="dialog">
+
+					<div class="modal-dialog modal-lg">
 
 						<!-- Modal content-->
 						<div class="modal-content">
 							<div class="modal-header">
-								<h4 class="modal-title">Modal Header</h4>
+								<h4 class="modal-title">Teachers Details</h4>
 								<button type="button" class="close" data-dismiss="modal">&times;</button>
 							</div>
+
 							<div class="modal-body">
-								<p>Some text in the modal.</p>
+								<div class="row">
+
+									<div class="col-md-6">
+										<div class="profile-img">
+											<img class="rounded mx-auto d-block" style="height:183px; width:275px;" src="/TeachersImages/{{ $teacher->dp_path }}" alt=""/>
+										</div>
+									</div>
+
+									<div class="col-md-6 pt-4" style="line-height: 1px;">
+										<div class="profile-head">
+											<h4 style="color: #0062cc;">
+												{{ $teacher->name }}
+											</h4>
+											<h6 style="color: #333;">
+												{{ $teacher->information }}
+											</h6>
+											<span class="heading">User Rating :</span>
+											@for ($i = 0; $i < $teacher->rating; $i++)
+												<span class="fa fa-star" style="color:#ffc200;"></span>
+											@endfor
+											@for ($i=$teacher->rating; $i < 5; $i++)
+													<span class="fa fa-star"></span>
+											@endfor
+											<h6>Knows : {{ $teacher->style }}</h6>
+
+										</div>
+									</div>
+
+								</div>
 							</div>
+
+							{{-- <div class="modal-body">
+
+									<div class="d-inline"> <span>{{ $teacher->name }} <br> {{ $teacher->information }} <br>
+
+										<span class="heading">User Rating :</span>
+										@for ($i = 0; $i < $teacher->rating; $i++)
+											<span class="fa fa-star" style="color:#ffc200;"></span>
+										@endfor
+										@for ($i=$teacher->rating; $i < 5; $i++)
+												<span class="fa fa-star"></span>
+										@endfor
+									</span>
+								</div>
+									<div class="d-inline float-right"> <img height="90px" width="90px" src="/TeachersImages/{{ $teacher->dp_path }}" class="rounded-circle" width="70">
+								</div>
+							</div> --}}
+
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
@@ -277,20 +330,9 @@
 
 					</div>
 				</div>
+			@endforeach
 
-				<div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
-					<div class="recent-work-wrap">
-						<img class="img-responsive" src="assets/img/portfolio/recent/item4.png" alt="">
-						<div class="overlay">
-							<div class="recent-work-inner">
-								<div class="text-dark display-4 pt-4">Name</div>
-								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
-							</div>
-						</div>
-					</div>
-				</div><!--/.portfolio-item-->
-
-				<div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
+				{{-- <div class="portfolio-item joomla html bootstrap col-xs-12 col-sm-4 col-md-3">
 					<div class="recent-work-wrap">
 						<img class="img-responsive" src="assets/img/portfolio/recent/item5.png" alt="">
 						<div class="overlay">
@@ -300,43 +342,9 @@
 							</div>
 						</div>
 					</div>
-				</div><!--/.portfolio-item-->
+				</div><!--/.portfolio-item--> --}}
 
-				<div class="portfolio-item wordpress html apps col-xs-12 col-sm-4 col-md-3">
-					<div class="recent-work-wrap">
-						<img class="img-responsive" src="assets/img/portfolio/recent/item6.png" alt="">
-						<div class="overlay">
-							<div class="recent-work-inner">
-								<div class="text-dark display-4 pt-4">Name</div>
-								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
-							</div>
-						</div>
-					</div>
-				</div><!--/.portfolio-item-->
 
-				<div class="portfolio-item wordpress html col-xs-12 col-sm-4 col-md-3">
-					<div class="recent-work-wrap">
-						<img class="img-responsive" src="assets/img/portfolio/recent/item7.png" alt="">
-						<div class="overlay">
-							<div class="recent-work-inner">
-								<div class="text-dark display-4 pt-4">Name</div>
-								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
-							</div>
-						</div>
-					</div>
-				</div><!--/.portfolio-item-->
-
-				<div class="portfolio-item wordpress html bootstrap col-xs-12 col-sm-4 col-md-3">
-					<div class="recent-work-wrap">
-						<img class="img-responsive" src="assets/img/portfolio/recent/item8.png" alt="">
-						<div class="overlay">
-							<div class="recent-work-inner">
-								<div class="text-dark display-4 pt-4">Name</div>
-								<a href="" data-toggle="modal" data-target="#myModal" class="text-primary"><i class="fa fa-eye"></i> View</a>
-							</div>
-						</div>
-					</div>
-				</div><!--/.portfolio-item-->
 
 			</div>
 		</div>

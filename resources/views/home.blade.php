@@ -58,13 +58,11 @@ setTimeout(
 </div>
 </div> -->
 
-
 <div id="home-section">
   <div class="dark-overlay">
     <div class="container-fluid" style="padding-top:6rem;">
 
       <div class="row px-4">
-
         <div class="col-md-3 px-3">
           <div class="card">
             <div class="card-header">

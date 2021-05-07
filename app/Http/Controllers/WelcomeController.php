@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\TeachersProfile;
+use App\Models\User;
 
 class WelcomeController extends Controller
 {
@@ -14,7 +16,9 @@ class WelcomeController extends Controller
     public function index()
     {
         //
-        return view('welcome');
+        $teachers = TeachersProfile::all();
+        $count = count(User::all());
+        return view('welcome',compact('teachers','count'));
     }
 
     /**

@@ -18,12 +18,14 @@ class ValidateProfile
     public function handle(Request $request, Closure $next)
     {
       $profile = Auth::user()->profile_verified_at;
-      if ($profile == "") {
-        return redirect('/user/profile');
-      }
-      else {
+      $role = Auth::user()->role;
+      if ($role == "teacher" || $role == "admin") {
         return $next($request);
       }
+      else if ($profile == "") {
+        return redirect('/user/profile');
+      }
+      return $next($request);
 
     }
 }

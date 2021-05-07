@@ -29,15 +29,17 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->midd
 //     'index' => 'home'
 // ]);
 
-Route::resource('/home/profile', ProfileController::class)->middleware('auth');
+Route::resource('/home/profile', ProfileController::class)->middleware(['auth', 'validateProfile']);
 
-Route::resource('/home/events', App\Http\Controllers\EventsController::class)->middleware('auth');
+Route::resource('/home/events', App\Http\Controllers\EventsController::class)->middleware(['auth', 'validateProfile']);
 
 Route::resource('/user/profile',App\Http\Controllers\UserProfileController::class)->middleware('auth');
 
-Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware('isAdmin','auth');
+Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth', 'isAdmin', 'validateProfile']);
 
-Route::resource('/admin/users', App\Http\Controllers\AdminUsersController::class)->middleware('auth','isAdmin');
+Route::resource('/admin/users', App\Http\Controllers\AdminUsersController::class)->middleware(['auth', 'isAdmin', 'validateProfile']);
 
-Route::resource('/admin/events', App\Http\Controllers\AdminEventsController::class)->middleware('auth','isAdmin');
+Route::resource('/admin/events', App\Http\Controllers\AdminEventsController::class)->middleware(['auth', 'isAdmin', 'validateProfile']);
+
+Route::resource('/admin/teachers_info', App\Http\Controllers\AdminTeachersController::class)->middleware(['auth', 'isAdmin', 'validateProfile']);
 //Route::get('/profile', [ProfileController::class, 'edit']);

@@ -65,6 +65,20 @@
 
         <!-- Nav Item - Users Collapse Menu -->
         <li class="nav-item">
+          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTeacher" aria-expanded="true" aria-controls="collapseUsers">
+            <i class="fa fa-book"></i>
+            <span>Teachers Info</span>
+          </a>
+          <div id="collapseTeacher" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionSidebar">
+            <div class="bg-white py-2 collapse-inner rounded">
+              <a class="collapse-item" href="{{ url('/admin/teachers_info') }}">All Info</a>
+              <a class="collapse-item" href="{{ url('/admin/teachers_info/create') }}">Create Info</a>
+            </div>
+          </div>
+        </li>
+
+        <!-- Nav Item - Users Collapse Menu -->
+        <li class="nav-item">
           <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseCourse" aria-expanded="true" aria-controls="collapseUsers">
             <i class="fa fa-book"></i>
             <span>Events</span>

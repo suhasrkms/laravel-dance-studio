@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Events;
+use App\Models\Feedback;
+use Session;
 use Auth;
 
 class EventsController extends Controller
