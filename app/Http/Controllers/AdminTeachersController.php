@@ -7,6 +7,7 @@ use App\Models\TeachersProfile;
 use Carbon\Carbon;
 use App\Models\User;
 use Auth;
+use Session;
 
 class AdminTeachersController extends Controller
 {
@@ -91,6 +92,25 @@ class AdminTeachersController extends Controller
   public function update(Request $request, $id)
   {
     //
+    $teacher_info = TeachersProfile::findOrFail($id);
+    $input = $request->all();
+    $request->validate([
+      'information' => 'required|min:15|max:850',
+      'style' => 'required',
+     ]);
+    $input['style'] = implode(" ", $request->style);
+    if($file = $request->file('dp_path')){
+      $name = time().$file->getClientOriginalName();
+      $file->move('TeachersImages', $name);
+      $input['dp_path'] = $name;
+
+      // Deleteing Existed Photo
+      $file_path = public_path().'/TeachersImages/'.$teacher_info->dp_path;
+      unlink($file_path);
+    }
+    $teacher_info->update($input);
+    Session::flash('message', 'Teachers Information Updated');
+    return back()->withInput();
   }
 
   /**

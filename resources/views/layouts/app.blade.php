@@ -37,6 +37,7 @@
 
 	<!-- Scripts -->
 	<link href="{{ asset('assets\lib\bootstrap\css\bootstrap.css') }}" rel="stylesheet">
+	@yield('css')
 	<link href="{{ asset('assets\css\styles.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets\lib\font-awesome\css\font-awesome.min.css') }}" rel="stylesheet">
 	<link href="{{ asset('assets\lib\animate\animate.min.css') }}" rel="stylesheet">
@@ -68,10 +69,10 @@
 						<li><a href="{{ route('register') }}">{{ __('Register') }}</a></li>
 					@endif
 				@else
-						<li><a href="{{ url('/home') }}">Home</a></li>
-							@if(Auth::user()->role == 'admin')
-								<li><a href="{{ url('/admin') }}">Admin</a></li>
-							@endif
+					<li><a href="{{ url('/home') }}">Home</a></li>
+					@if(Auth::user()->role == 'admin')
+						<li><a href="{{ url('/admin') }}">Admin</a></li>
+					@endif
 					<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
 						<ul>
 							<li><a href="/home/profile">Profile</a></li>
@@ -157,9 +158,9 @@ Footer
 
 		{{-- <script>
 		$(document).ready(function(){
-			$("#myModal").modal('show');
-		});
-		</script> --}}
+		$("#myModal").modal('show');
+	});
+</script> --}}
 
-	</body>
-	</html>
+</body>
+</html>

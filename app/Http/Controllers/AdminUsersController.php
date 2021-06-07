@@ -80,6 +80,15 @@ class AdminUsersController extends Controller
   public function update(Request $request, $id)
   {
     //
+    $input = $request->all();
+    $request->validate([
+      'name' => 'required|min:4|max:20',
+      'email' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+     ]);
+    $user = User::findOrFail($id);
+    $user->update($input);
+    Session::flash('message', 'User Data Updated');
+    return back()->withInput();
   }
 
   /**
@@ -91,5 +100,9 @@ class AdminUsersController extends Controller
   public function destroy($id)
   {
     //
+    $user = User::findOrFail($id);
+    $user->delete();
+    Session::flash('delete','The User has been deleted');
+    return back()->withInput();
   }
 }
