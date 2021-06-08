@@ -33,6 +33,10 @@ Route::resource('/home/profile', ProfileController::class)->middleware(['auth', 
 
 Route::resource('/home/events', App\Http\Controllers\EventsController::class)->middleware(['auth', 'validateProfile']);
 
+Route::get('/home/classes', [App\Http\Controllers\ClassController::class, 'index'])->middleware(['auth', 'validateProfile']);
+
+Route::get('/home/gallery', [App\Http\Controllers\GalleryController::class, 'index'])->middleware(['auth', 'validateProfile']);
+
 Route::resource('/user/profile',App\Http\Controllers\UserProfileController::class)->middleware('auth');
 
 Route::get('/admin', [App\Http\Controllers\AdminController::class, 'index'])->middleware(['auth', 'isAdmin', 'validateProfile']);

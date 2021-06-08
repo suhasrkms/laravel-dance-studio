@@ -92,21 +92,6 @@
           </div>
         </li>
 
-        <!-- Nav Item - Subjects Collapse Menu -->
-        <li class="nav-item">
-          <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseSubjects" aria-expanded="true" aria-controls="collapseUsers">
-            <i class="fa fa-sun"></i>
-            <span>Subjects</span>
-          </a>
-          <div id="collapseSubjects" class="collapse" aria-labelledby="headingtwo" data-parent="#accordionSidebar">
-            <div class="bg-white py-2 collapse-inner rounded">
-              <a class="collapse-item" href="{{ url('/admin/subjects') }}">All Subjects</a>
-            </div>
-          </div>
-        </li>
-
-
-
         <!-- Divider -->
         <hr class="sidebar-divider">
 

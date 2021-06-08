@@ -24,12 +24,12 @@
 
             <div class="form-group">
               {!! Form::label('style', 'Dance Style :',['class'=>'pr-4']) !!}
-              {!! Form::select('style', ['student' =>'Student', 'teacher'=>'Teacher', 'admin'=>'Admin']  , null , ['class'=>'form-control col-md-4 d-inline'])!!}
+              {!! Form::select('style', ['Western' =>'Western', 'Contemporary '=>'Contemporary ', 'Bharatanatyam'=>'Bharatanatyam']  , null , ['class'=>'form-control col-md-4 d-inline'])!!}
             </div>
 
             <div class="form-group">
               {!! Form::label('prefered_batch', 'Prefered Batch:',['class'=>'pr-2']) !!}
-              {!! Form::select('prefered_batch', ['student' =>'Student', 'teacher'=>'Teacher', 'admin'=>'Admin']  , null , ['class'=>'form-control col-md-4 d-inline'])!!}
+              {!! Form::select('prefered_batch', ['morning' =>'Morning', 'evening'=>'Evening', 'night'=>'Night']  , null , ['class'=>'form-control col-md-4 d-inline'])!!}
             </div>
 
             <div class="form-group">

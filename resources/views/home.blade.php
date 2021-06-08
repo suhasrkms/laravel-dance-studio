@@ -84,7 +84,7 @@ setTimeout(
               @endif
 
               <li class="list-group-item text-center text-light">
-                <a class="btn btn-info btn-block" data-toggle="modal" data-target="#allClasses">See All Classes</a></td>
+                <a class="btn btn-info btn-block" data-toggle="modal" data-target="#allClasses">See Today's Classes</a></td>
               </li>
             </ul>
           </div>
@@ -143,7 +143,7 @@ setTimeout(
           <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">All Classes</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Today's Classes</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                   <span aria-hidden="true">&times;</span>
                 </button>
@@ -161,12 +161,14 @@ setTimeout(
                     </thead>
                     <tbody>
                       @foreach ($events->where('event_type','class') as $event)
+                      @if ($event->date == Carbon\Carbon::now()->format("Y-m-d"))
                       <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td>{{ $event->event_name }}</td>
                         <td>{{ $event->date}}</td>
                         <td>{{ Carbon\Carbon::parse($event['start_time'])->format('g:i a') }}</td>
                       </tr>
+                      @endif
                       @endforeach
                     </tbody>
                   </table>
@@ -181,35 +183,43 @@ setTimeout(
           <div class="row">
 
             <div class="col-sm-4">
+              <a href="/home/gallery">
               <div class="custom-card custom-card-1">
                 <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+                  <h3 class="text-dark">Gallery</h3>
                 </div>
               </div>
+              </a>
             </div>
 
             <div class="col-sm-4 pt-md-0 pt-3">
+              <a href="#feedback" class="scrollto">
               <div class="custom-card custom-card-2">
                 <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+                  <h3 class="text-dark">Feedback</h3>
                 </div>
               </div>
+              </a>
             </div>
 
             <div class="col-sm-4 pt-md-0 pt-3">
-              <div class="custom-card custom-card-3">
+              <a href="../#portfolio">
+              <div class="custom-card custom-card-3" style="padding:75px;">
                 <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+                  <h3 class="text-dark">Know Your Teachers</h3>
                 </div>
               </div>
+              </a>
             </div>
 
-            <div class="col-sm-4 pt-3">
-              <div class="custom-card custom-card-3">
-                <div class="custom-card-body text-left">
-                  <h3>Card title</h3>
+            <div class="col-sm-4 pt-3" >
+              <a href="/home/classes">
+                <div class="custom-card custom-card-3" style="padding:75px;">
+                  <div class="custom-card-body text-left">
+                    <h3 class="text-center text-dark">List of Classes</h3>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div class="col-sm-4 pt-3" >
@@ -251,7 +261,7 @@ Contact US
       <p>Satisifed or not we need to know your ever feedback towards UGHUB ...<br> So fell free to contact us or mail upon</p>
     </div>
 
-    <div class="row contact-info">
+    <div class="row contact-info" id="feedback">
 
       <div class="col-md-4">
         <div class="contact-address">

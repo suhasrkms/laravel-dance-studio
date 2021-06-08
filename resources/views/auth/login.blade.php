@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+
 <div class="container" style="min-height:580px;">
     <div class="row justify-content-center" style="padding-top:8rem;">
         <div class="col-md-8">
@@ -70,4 +72,5 @@
         </div>
     </div>
 </div>
+
 @endsection
