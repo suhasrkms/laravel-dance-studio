@@ -23,6 +23,10 @@ class UserProfileController extends Controller
     public function store(Request $request)
     {
       //
+      $request->validate([
+        'phone_no' => 'required|regex:/[0-9]{9}/|digits:10',
+        'age' => 'required',
+      ]);
       $input = $request->all();
       $id = Auth::user()->id;
       $input['user_id'] = $id;

@@ -10,6 +10,17 @@
 
           <div class="card-body ">
 
+            @if ($errors->any())
+                @foreach ($errors->all() as $error)
+                  <div class="alert alert-info alert-dismissible fade show" role="alert">
+                    <strong>{{ $error }}</strong>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                @endforeach
+            @endif
+
             {!! Form::open(['method'=>'POST', 'action'=> 'App\Http\Controllers\UserProfileController@store']) !!}
 
             <div class="form-group">

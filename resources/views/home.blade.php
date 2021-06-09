@@ -294,12 +294,12 @@ Contact US
       {!! Form::model($user, ['method'=>'POST', 'action'=> ['App\Http\Controllers\EventsController@index',$user->id]]) !!}
 
       <div class="form-row">
-        <div class="form-group col-md-6">
-          {!! Form::text('name', null, ['class'=>'form-control'])!!}
+        <div class="form-group col-md-6  disabled">
+          {!! Form::text('name', null, ['class'=>'form-control','disabled'])!!}
         </div>
 
         <div class="form-group col-md-6">
-          {!! Form::text('email', null,['class'=>'form-control'])!!}
+          {!! Form::text('email', null,['class'=>'form-control','disabled'])!!}
         </div>
       </div>
 

@@ -41,6 +41,13 @@ class AdminEventsController extends Controller
   public function store(Request $request)
   {
     //
+    $request->validate([
+      'event_name' => 'required|min:4|max:24',
+      'event_info' => 'required|min:10|max:100',
+      'date' => 'required|after:' . Carbon::yesterday('Asia/Kolkata')->toDateString(),
+      'start_time' => 'required|after:' . Carbon::now('Asia/Kolkata')->toTimeString(),
+      'end_time' => 'required|after:' . Carbon::parse($request->get('start_time'))->addSeconds('600')->toTimeString(),
+    ]);
     $input = $request->all();
     Events::create($input);
     return redirect('/admin/events');

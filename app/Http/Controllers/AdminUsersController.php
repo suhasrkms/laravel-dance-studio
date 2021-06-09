@@ -41,6 +41,11 @@ class AdminUsersController extends Controller
   */
   public function store(UsersRequest $request)
   {
+
+    $request->validate([
+      'name' => 'required|min:4|max:20',
+      'email' => 'regex:/^([a-z0-9\+_\-]+)(\.[a-z0-9\+_\-]+)*@([a-z0-9\-]+\.)+[a-z]{2,6}$/ix',
+     ]);
     $input = $request->all();
     $input['password'] = bcrypt($request->password);
     User::create($input);

@@ -16,7 +16,8 @@ class AdminController extends Controller
     {
         //
         $users = Auth::user()->all();
-        return view('admin.index',compact('users'));
+        $all = count($users) - count($users->where('role','admin'));
+        return view('admin.index',compact('users','all'));
     }
 
     /**

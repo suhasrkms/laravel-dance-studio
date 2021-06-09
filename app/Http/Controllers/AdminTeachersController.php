@@ -43,6 +43,11 @@ class AdminTeachersController extends Controller
   */
   public function store(Request $request)
   {
+    $request->validate([
+      'dp_path' => 'required',
+      'information' => 'required|min:15|max:850',
+      'style' => 'required',
+     ]);
     $input = $request->all();
 
     if($file = $request->file('dp_path')){
