@@ -1,4 +1,4 @@
-# lasya-dance-studio
+# Lasya-Dance-Studio
 
 Thanks for downloading this project!
 
