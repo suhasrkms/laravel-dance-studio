@@ -51,7 +51,7 @@ class AdminTeachersController extends Controller
     $input = $request->all();
 
     if($file = $request->file('dp_path')){
-      $name = time().$file->getClientOriginalName();
+      $name = "/TeachersImages/" + time().$file->getClientOriginalName();
       $file->move('TeachersImages', $name);
       $input['dp_path'] = $name;
     }
@@ -105,9 +105,10 @@ class AdminTeachersController extends Controller
      ]);
     $input['style'] = implode(" ", $request->style);
     if($file = $request->file('dp_path')){
-      $name = time().$file->getClientOriginalName();
+      $finalname = "/TeachersImages/";
+      $name =  time().$file->getClientOriginalName();
       $file->move('TeachersImages', $name);
-      $input['dp_path'] = $name;
+      $input['dp_path'] = $finalname.$name;
 
       // Deleteing Existed Photo
       $file_path = public_path().'/TeachersImages/'.$teacher_info->dp_path;

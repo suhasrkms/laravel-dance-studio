@@ -1,20 +1,15 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-  <title>Code Hacking</title>
-  <!-- Custom styles for this template-->
+
   <link href="{{ asset('assets\admin\css\sb-admin-2.css') }}" rel="stylesheet">
 
-</head>
 
+@section('content')
 <body id="page-top">
-
+    
+	</head>
   <!-- Begin Page Content -->
-  <div class="container-fluid" style="padding-top:10%">
+  <div class="container-fluid" style="padding-top:30vh; min-height:90vh;">
 
     <!-- 404 Error Text -->
     <div class="text-center">
@@ -26,4 +21,5 @@
 
   </div>
 </body>
+@endsection()
 </html>

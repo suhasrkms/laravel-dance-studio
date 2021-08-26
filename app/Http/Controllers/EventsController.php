@@ -19,7 +19,7 @@ class EventsController extends Controller
     {
         //
         $day="Nil";
-        $events=Events::all();
+        $events=Events::all()->sortBy('date');
         return view('users.events',compact('events','day'));
     }
 

@@ -40,15 +40,17 @@ class AdminEventsController extends Controller
   */
   public function store(Request $request)
   {
-    //
     $request->validate([
       'event_name' => 'required|min:4|max:24',
       'event_info' => 'required|min:10|max:100',
       'date' => 'required|after:' . Carbon::yesterday('Asia/Kolkata')->toDateString(),
-      'start_time' => 'required|after:' . Carbon::now('Asia/Kolkata')->toTimeString(),
+      'start_time' => 'required',
       'end_time' => 'required|after:' . Carbon::parse($request->get('start_time'))->addSeconds('600')->toTimeString(),
     ]);
     $input = $request->all();
+    $day = $request->date . " " .$request->start_time;
+    $dateAndTime = Carbon::parse($day);
+    $input['date'] = $dateAndTime;
     Events::create($input);
     return redirect('/admin/events');
   }
@@ -90,9 +92,12 @@ class AdminEventsController extends Controller
       'event_name' => 'required|min:4|max:24',
       'event_info' => 'required|min:10|max:100',
       'date' => 'required|after:' . Carbon::yesterday('Asia/Kolkata')->toDateString(),
-      'start_time' => 'required|after:' . Carbon::now('Asia/Kolkata')->toTimeString(),
+      'start_time' => 'required',
       'end_time' => 'required|after:' . Carbon::parse($request->get('start_time'))->addSeconds('600')->toTimeString(),
     ]);
+    $day = $request->date . " " .$request->start_time;
+    $dateAndTime = Carbon::parse($day);
+    $input['date'] = $dateAndTime;
     $event = Events::findOrFail($id);
     $event->update($input);
     Session::flash('message', 'Event Updated');

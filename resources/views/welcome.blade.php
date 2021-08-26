@@ -130,7 +130,6 @@
 			<header class="section-header">
 				<h3>About Us</h3>
 				<p>
-					{{-- As friends we are ready to accompany you with your journey of undergraduate studies, we are with full confident on make your UG college studies easy and valuable,UG hub is a concept of friend teaching his best friend. I am ready with all the tools that makes you a best student in your academic year. --}}
 					The term ‘Lasya‘, in the context of Hindu Mythology, stands for the dance performed by Goddess Parvati. Lasya means beauty, happiness and grace. Lasya Dance Studio is an institution that share the happiness, grace rhythm of dance. Join us and explore the glimpse of dance.
 				</p>
 			</header>
@@ -145,7 +144,7 @@
 						</div>
 						<h2 class="title"><a href="#">Our Mission</a></h2>
 						<p>
-							We bring up experiencing learning into education system. Philosophy of education has been defined as an attempt to find answers to questions. Our attempts is find answers through craft, art, health and education should all be integrated into one scheme.
+							We believes in artists collaborating as equals, globally and virtually. We incubate performances, arts exchanges, and publications that allow artists to work together because we believe that is the future. We grow artists and we want everyone to enjoy through it.
 						</p>
 					</div>
 				</div>
@@ -159,7 +158,7 @@
 						</div>
 						<h2 class="title"><a href="#">Our Plan</a></h2>
 						<p>
-							For those who do have access to the right technology, there is evidence that learning online can be more effective in a number of ways. It enables us to reach out to Learners more effectively through Digital medium. Hence we are ready with best platform called UGhub.
+							For those who do have access to the right technology, there is evidence that learning online can be more effective in a number of ways. It enables us to reach out to Learners more effectively through Digital medium. Hence we are ready with best platform for you.
 						</p>
 					</div>
 				</div>
@@ -172,7 +171,7 @@
 						</div>
 						<h2 class="title"><a href="#">Our Vision</a></h2>
 						<p>
-							Adopting digital technology in education is the most cost-effective way to drive economic development, That's why we’ll continue directing our program, toward a future version learning where every student will have access to the quality education they deserve.
+							Adopting digital technology in education is the most cost-effective way to drive economic development, That's why we’ll continue directing our program, toward a future version learning where every student will have access to the quality dance styles they deserve.
 						</p>
 					</div>
 				</div>
@@ -201,7 +200,8 @@
 				</div>
 			</div>
 			<div class="col-md-6 pt-4 text-light">
-				<h4>Nulla faucibus mauris ac leo imperdiet, id auctor urna consectetur</h4>
+				{{-- <h4>Nulla faucibus mauris ac leo imperdiet, id auctor urna consectetur</h4> --}}
+				<h4>Explore the rythm with lasya, get the glimpse of what we do and what you learn. </h4>
 				<div class="row text-center pt-4 pt-md-0">
 				<div class="col-md-4">
 					<h3 id="w3l_stats1" class="odometer">10</h3>
@@ -212,7 +212,7 @@
 					<p>Awards Winning</p>
 				</div>
 				<div class="col-md-4">
-					<h3 id="w3l_stats3" class="odometer">{{ $count }}</h3>
+					<h3 id="w3l_stats3" class="odometer">{{ $count }}+</h3>
 					<p>Students</p>
 				</div>
 
@@ -231,7 +231,8 @@
 		<div class="container">
 			<div class="center">
 				<h2>Our Teachers</h2>
-				<p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p>
+				{{-- <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> et dolore magna aliqua. Ut enim ad minim veniam</p> --}}
+				<p class="lead">Dance teachers instruct and train students in dance, incorporating elements of technique, performance, and choreography in their educational approach.</p>
 
 
 			</div>
@@ -246,11 +247,11 @@
 		<div class="container">
 
 			<div class="portfolio-items">
-				@foreach ($teachers as $teacher)
 
+				@foreach ($teachers as $teacher)
 					<div class="portfolio-item {{ $teacher->style }} col-xs-12 col-sm-4 col-md-3">
 						<div class="recent-work-wrap">
-							<img class="img-responsive pl-3" style="height:220px; width:290px;" src="/TeachersImages/{{ $teacher->dp_path }}" alt="">
+							<img class="img-responsive" style="height:220px; width:290px;" src="{{ $teacher->dp_path }}" alt="">
 							<div class="overlay">
 								<div class="recent-work-inner">
 									<div class="text-dark display-4 pt-4">{{ $teacher->name }}</div>
@@ -279,7 +280,7 @@
 
 									<div class="col-md-6">
 										<div class="profile-img">
-											<img class="rounded mx-auto d-block" style="height:183px; width:275px;" src="/TeachersImages/{{ $teacher->dp_path }}" alt=""/>
+											<img class="rounded mx-auto d-block" style="height:183px; width:275px;" src="{{ $teacher->dp_path }}" alt=""/>
 										</div>
 									</div>
 
@@ -288,9 +289,9 @@
 											<h4 style="color: #0062cc;">
 												{{ $teacher->name }}
 											</h4>
-											<h6 style="color: #333;">
+											<h5 class="text-dark">
 												{{ $teacher->information }}
-											</h6>
+											</h5>
 											<span class="heading">User Rating :</span>
 											@for ($i = 0; $i < $teacher->rating; $i++)
 												<span class="fa fa-star" style="color:#ffc200;"></span>
@@ -374,7 +375,7 @@
 	        <div class="contact-phone">
 	          <i class="ion-ios-telephone-outline"></i>
 	          <h3>Phone Number</h3>
-	          <p>+91 9945887177</p>
+	          <p>+91 9945123456</p>
 	        </div>
 	      </div>
 
@@ -382,7 +383,7 @@
 	        <div class="contact-email">
 	          <i class="ion-ios-email-outline"></i>
 	          <h3>Email</h3>
-	          <p><a href="mailto:support@ughub.in">support@ughub.in</a></p>
+	          <p><a href="mailto:support@lasya.in">support@lasya.in</a></p>
 	        </div>
 	      </div>
 
@@ -397,7 +398,7 @@
 	<footer id="footer">
 		<div class="container">
 			<div class="copyright">
-				&copy; Copyright <strong>UGHUB</strong>. All Rights Reserved <br>
+				&copy; Copyright <strong>LASYA</strong>. All Rights Reserved <br>
 				<a href="privacypolicys.html">Privacy Policy</a>
 				<a class="pl-3" href="faqs.html">FAQ's</a>
 

@@ -66,7 +66,7 @@ setTimeout(
 
             <tbody>
               <tr>
-                <td><img height="50px" class="img-responsive rounded" src="/TeachersImages/{{ $t_info->dp_path }}" alt=""></td>
+                <td><img height="50px" class="img-responsive rounded" src="{{ $t_info->dp_path }}" alt=""></td>
                 <td class="text-capitalize">{{ $t_info->name }}</td>
                 <td>{{ $t_info->information }}</td>
                 <td>{{ $t_info->rating }} of 5</td>
@@ -103,7 +103,7 @@ setTimeout(
                         {!! Form::file('dp_path', null,['class'=>'form-control'])!!}
                       </div>
                       <div class="col-6">
-                        <img height="100px" class="img-responsive rounded float-right pr-4" src="/TeachersImages/{{ $t_info->dp_path }}" alt="">
+                        <img height="100px" class="img-responsive rounded float-right pr-4" src="{{ $t_info->dp_path }}" alt="">
                       </div>
                     </div>
 

@@ -18,7 +18,7 @@ class CreateEventsTable extends Migration
             $table->char('event_type');
             $table->string('event_name');
             $table->char('event_info');
-            $table->date('date');
+            $table->timestamp('date');
             $table->time('start_time');
             $table->time('end_time');
             $table->timestamps();

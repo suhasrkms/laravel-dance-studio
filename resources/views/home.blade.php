@@ -70,7 +70,7 @@ setTimeout(
             </div>
             <ul class="list-group list-group-flush">
 
-              @foreach ($events->where('event_type','class') as $event)
+              @foreach ($events->where('event_type','class')->sortBy('date') as $event)
               @if ($event->date == Carbon\Carbon::now()->format("Y-m-d"))
               <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('g:i a') }}</li>
               <p hidden>{{ $count = $count+1 }}</p>
@@ -97,7 +97,7 @@ setTimeout(
 
               <p hidden>{{ $count = 0 }}</p>
 
-              @foreach ($events->where('event_type','event') as $event)
+              @foreach ($events->where('event_type','event')->sortBy('start_date') as $event)
               @if ($event->date >= Carbon\Carbon::now()->format("Y-m-d"))
               <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('g:i a') }}</li>
               <p hidden>{{ $count = $count +1 }}</p>
@@ -258,7 +258,7 @@ Contact US
 
     <div class="section-header">
       <h3>Contact Us</h3>
-      <p>Satisifed or not we need to know your ever feedback towards UGHUB ...<br> So fell free to contact us or mail upon</p>
+      <p>Satisifed or not we need to know your ever feedback towards us ...<br> So fell free to contact us or mail upon</p>
     </div>
 
     <div class="row contact-info" id="feedback">
@@ -275,7 +275,7 @@ Contact US
         <div class="contact-phone">
           <i class="ion-ios-telephone-outline"></i>
           <h3>Phone Number</h3>
-          <p>+91 9945887177</p>
+          <p>+91 9945123456</p>
         </div>
       </div>
 
@@ -283,7 +283,7 @@ Contact US
         <div class="contact-email">
           <i class="ion-ios-email-outline"></i>
           <h3>Email</h3>
-          <p><a href="mailto:support@ughub.in">support@ughub.in</a></p>
+          <p><a href="mailto:support@lasya.in">support@lasya.in</a></p>
         </div>
       </div>
 

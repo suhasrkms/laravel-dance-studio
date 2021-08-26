@@ -65,7 +65,7 @@ setTimeout(
 
               @foreach ($events as $event)
 
-                <tbody>		
+                <tbody>
                   <tr>
                     <td class="text-capitalize">{{ $event->event_type }}</td>
                     <td class="text-capitalize">{{ $event->event_name}}</td>

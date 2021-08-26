@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\Models\User;
+use App\Models\TeachersProfile;
+use App\Models\Feedback;
 
 class AdminController extends Controller
 {
@@ -16,8 +19,10 @@ class AdminController extends Controller
     {
         //
         $users = Auth::user()->all();
+        $teachers_info = TeachersProfile::orderBy('rating', 'DESC')->get();
+        $feedbacks = Feedback::all();
         $all = count($users) - count($users->where('role','admin'));
-        return view('admin.index',compact('users','all'));
+        return view('admin.index',compact('users','all','teachers_info','feedbacks'));
     }
 
     /**

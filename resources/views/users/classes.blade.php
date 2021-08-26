@@ -134,7 +134,7 @@ $(document).ready(function(){
       @else
       <div class="row px-4">
 
-      @foreach ($events->where('event_type','class') as $event)
+      @foreach ($events->where('event_type','class')->sortBy('date') as $event)
 
         <div class="col-md-4 px-3 pb-4">
           <div class="card date-clickthrough d-flex flex-row">
