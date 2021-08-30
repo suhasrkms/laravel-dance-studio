@@ -52,6 +52,7 @@ class AdminEventsController extends Controller
     $dateAndTime = Carbon::parse($day);
     $input['date'] = $dateAndTime;
     Events::create($input);
+    Session::flash('message', 'Event Created');
     return redirect('/admin/events');
   }
 

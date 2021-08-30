@@ -70,8 +70,8 @@ setTimeout(
             </div>
             <ul class="list-group list-group-flush">
 
-              @foreach ($events->where('event_type','class')->sortBy('date') as $event)
-              @if ($event->date == Carbon\Carbon::now()->format("Y-m-d"))
+              @foreach ($events->where('event_type','class')->sortBy('start_time') as $event)
+              @if ( Carbon\Carbon::parse($event->date)->format('Y-m-d') == Carbon\Carbon::now()->format("Y-m-d"))
               <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('g:i a') }}</li>
               <p hidden>{{ $count = $count+1 }}</p>
               @endif
@@ -98,7 +98,7 @@ setTimeout(
               <p hidden>{{ $count = 0 }}</p>
 
               @foreach ($events->where('event_type','event')->sortBy('start_date') as $event)
-              @if ($event->date >= Carbon\Carbon::now()->format("Y-m-d"))
+              @if ( Carbon\Carbon::parse($event->date)->format('Y-m-d') >= Carbon\Carbon::now()->format("Y-m-d"))
               <li class="list-group-item">{{ $event->event_name }} Class @ {{ Carbon\Carbon::parse($event['start_time'])->format('g:i a') }}</li>
               <p hidden>{{ $count = $count +1 }}</p>
               @endif
@@ -161,7 +161,7 @@ setTimeout(
                     </thead>
                     <tbody>
                       @foreach ($events->where('event_type','class') as $event)
-                      @if ($event->date == Carbon\Carbon::now()->format("Y-m-d"))
+                      @if ( Carbon\Carbon::parse($event->date)->format('Y-m-d') == Carbon\Carbon::now()->format("Y-m-d"))
                       <tr>
                         <th scope="row">{{ $event->id }}</th>
                         <td>{{ $event->event_name }}</td>

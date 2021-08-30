@@ -130,7 +130,7 @@ $(document).ready(function(){
       <h1 class="display-4 pt-0 text-light">Classes</h1>
 
       @if (count($events->where('event_type','class')) == 0)
-        <h1 class="display-1 text-center pt-5 text-light">No Events Found</h1>
+        <h1 class="display-1 text-center pt-5 text-light">No Classes Found</h1>
       @else
       <div class="row px-4">
 

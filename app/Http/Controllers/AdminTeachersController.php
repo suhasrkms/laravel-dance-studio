@@ -49,9 +49,8 @@ class AdminTeachersController extends Controller
       'style' => 'required',
      ]);
     $input = $request->all();
-
     if($file = $request->file('dp_path')){
-      $name = "/TeachersImages/" + time().$file->getClientOriginalName();
+      $name = "/TeachersImages/" . time().$file->getClientOriginalName();
       $file->move('TeachersImages', $name);
       $input['dp_path'] = $name;
     }
@@ -60,8 +59,8 @@ class AdminTeachersController extends Controller
     $input['name'] = User::find($request->teachers_id)->name;
     User::where('id',$request->teachers_id)->update(['profile_verified_at'=>$time]);
     TeachersProfile::create($input);
+    Session::flash('message', 'Teachers Information Updated');
     return back()->withInput();
-
 
   }
 
@@ -111,7 +110,7 @@ class AdminTeachersController extends Controller
       $input['dp_path'] = $finalname.$name;
 
       // Deleteing Existed Photo
-      $file_path = public_path().'/TeachersImages/'.$teacher_info->dp_path;
+      $file_path = public_path().$teacher_info->dp_path;
       unlink($file_path);
     }
     $teacher_info->update($input);
