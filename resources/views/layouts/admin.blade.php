@@ -7,7 +7,7 @@
 
   <meta name="csrf-token" content="{{ csrf_token() }}">
 
-	<title>{{ config('app.name', 'Lasya') }}</title>
+  <title>{{ config('app.name', 'Lasya') }}</title>
 
   <!-- Style--><!-- Custom fonts for this template-->
   <link href="{{ asset('assets\admin\vendor\fontawesome-free\css\all.min.css') }}" rel="stylesheet">
@@ -15,7 +15,7 @@
   <link href="{{ asset('assets\admin\css\sb-admin-2.css') }}" rel="stylesheet">
   <!-- Custom styles for this page -->
   <link href="{{ asset('assets\admin\vendor\datatables\dataTables.bootstrap4.min.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets\lib\toastr\toastr.css') }}" rel="stylesheet">
+  <link href="{{ asset('assets\lib\toastr\toastr.css') }}" rel="stylesheet">
 
 </head>
 
@@ -238,20 +238,24 @@
     <!-- javascript error -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 
-		@yield('javascript')
+    @yield('javascript')
 
     <!-- Page level plugins -->
     <script src="{{ asset('assets\admin\vendor\datatables\jquery.dataTables.min.js') }}"></script>
     <script src="{{ asset('assets\admin\vendor\datatables\dataTables.bootstrap4.min.js') }}"></script>
     <script type="text/javascript">
-        $(document).ready(function() {
-          $('#example').DataTable();
-        } );
+    // $(document).ready(function() {
+    //   $('#example').DataTable();
+    // } );
+    $(document).ready(function() {
+      $('#example').DataTable( {
+      } );
+    } );
     </script>
 
     <script type="text/javascript">
     $(function () {
-    $('[data-toggle="tooltip"]').tooltip();
+      $('[data-toggle="tooltip"]').tooltip();
     });
     </script>
 

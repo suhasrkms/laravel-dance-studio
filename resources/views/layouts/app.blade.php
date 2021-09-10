@@ -72,6 +72,8 @@
 					<li><a href="{{ url('/home') }}">Home</a></li>
 					@if(Auth::user()->role == 'admin')
 						<li><a href="{{ url('/admin') }}">Admin</a></li>
+					@elseif(Auth::user()->role == 'teacher')
+						<li><a href="{{ url('/home/add-class') }}">Add Class</a></li>
 					@endif
 					<li class="menu-has-children"><a href="">{{ Auth::user()->name }}</a>
 						<ul>

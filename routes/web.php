@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TeachersEventController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,4 +47,6 @@ Route::resource('/admin/users', App\Http\Controllers\AdminUsersController::class
 Route::resource('/admin/events', App\Http\Controllers\AdminEventsController::class)->middleware(['auth', 'isAdmin', 'validateProfile']);
 
 Route::resource('/admin/teachers_info', App\Http\Controllers\AdminTeachersController::class)->middleware(['auth', 'isAdmin', 'validateProfile']);
+
+Route::resource('/home/add-class', TeachersEventController::class)->middleware(['auth', 'isTeacher']);
 //Route::get('/profile', [ProfileController::class, 'edit']);
