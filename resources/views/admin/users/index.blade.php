@@ -40,7 +40,7 @@ setTimeout(
       </script>
 
     @endsection
-    
+
     @section('content')
 
       <!-- DataTales Example -->
@@ -81,6 +81,75 @@ setTimeout(
                   </tr>
 
 
+                  <!-- Update Modal -->
+
+                  <div class="modal fade bd-example-modal-lg" id="update{{ $user->id }}"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Update User</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+
+                        <div class="modal-body pl-4">
+
+                          {!! Form::model($user, ['method'=>'PATCH', 'action'=> ['App\Http\Controllers\AdminUsersController@update',$user->id]]) !!}
+
+                          <div class="form-group">
+                            {!! Form::label('name', 'Name:') !!}
+                            {!! Form::text('name', null, ['class'=>'form-control'])!!}
+                          </div>
+
+                          <div class="form-group">
+                            {!! Form::label('email', 'Email:') !!}
+                            {!! Form::email('email', null, ['class'=>'form-control'])!!}
+                          </div>
+
+                          <div class="form-group">
+                            {!! Form::label('role', 'Role:') !!}
+                            {!! Form::select('role', ['student' =>'Student', 'teacher'=>'Teacher', 'admin'=>'Admin']  , null , ['class'=>'form-control col-4'])!!}
+                          </div>
+                        </div>
+
+                        <div class="modal-footer">
+                          {{-- <button type="button" class="btn btn-success">Save changes</button> --}}
+                          {!! Form::submit('Save changes', ['class'=>'btn btn-success']) !!}
+                          {!! Form::close() !!}
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Delete Modal -->
+                  <div class="modal fade" id="delete{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          Do you really want to delete these records? This process cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+
+                          {!! Form::open(['method'=>'DELETE', 'action'=> ['App\Http\Controllers\AdminUsersController@destroy',$user->id]]) !!}
+                          <div class="form-group">
+                            {!! Form::submit('Delete User', ['class'=>'btn btn-danger']) !!}
+                          </div>
+                          {!! Form::close() !!}
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 @endforeach
               </tbody>
             </table>
@@ -88,73 +157,6 @@ setTimeout(
         </div>
       </div>
 
-      <!-- Update Modal -->
 
-      <div class="modal fade bd-example-modal-lg" id="update{{ $user->id }}"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title">Update User</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-
-            <div class="modal-body pl-4">
-
-              {!! Form::model($user, ['method'=>'PATCH', 'action'=> ['App\Http\Controllers\AdminUsersController@update',$user->id]]) !!}
-
-              <div class="form-group">
-                {!! Form::label('name', 'Name:') !!}
-                {!! Form::text('name', null, ['class'=>'form-control'])!!}
-              </div>
-
-              <div class="form-group">
-                {!! Form::label('email', 'Email:') !!}
-                {!! Form::email('email', null, ['class'=>'form-control'])!!}
-              </div>
-
-              <div class="form-group">
-                {!! Form::label('role', 'Role:') !!}
-                {!! Form::select('role', ['student' =>'Student', 'teacher'=>'Teacher', 'admin'=>'Admin']  , null , ['class'=>'form-control col-4'])!!}
-              </div>
-            </div>
-
-            <div class="modal-footer">
-              {{-- <button type="button" class="btn btn-success">Save changes</button> --}}
-              {!! Form::submit('Save changes', ['class'=>'btn btn-success']) !!}
-              {!! Form::close() !!}
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Delete Modal -->
-      <div class="modal fade" id="delete{{ $user->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-              Do you really want to delete these records? This process cannot be undone.
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-
-              {!! Form::open(['method'=>'DELETE', 'action'=> ['App\Http\Controllers\AdminUsersController@destroy',$user->id]]) !!}
-              <div class="form-group">
-                {!! Form::submit('Delete User', ['class'=>'btn btn-danger']) !!}
-              </div>
-              {!! Form::close() !!}
-
-            </div>
-          </div>
-        </div>
-      </div>
 
     @endsection()

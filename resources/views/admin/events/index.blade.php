@@ -63,9 +63,8 @@ setTimeout(
                 </tr>
               </thead>
 
-              @foreach ($events as $event)
-
-                <tbody>
+              <tbody>
+                @foreach ($events as $event)
                   <tr>
                     <td class="text-capitalize">{{ $event->event_type }}</td>
                     <td class="text-capitalize">{{ $event->event_name}}</td>
@@ -80,94 +79,94 @@ setTimeout(
                       </div>
                     </td>
                   </tr>
-                </tbody>
 
-                <!-- Update Modal -->
+                  <!-- Update Modal -->
 
-                <div class="modal fade bd-example-modal-lg" id="model{{ $event->id }}"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Update Event</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body pl-4">
+                  <div class="modal fade bd-example-modal-lg" id="model{{ $event->id }}"  tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Update Event</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body pl-4">
 
-                        {!! Form::model($event, ['method'=>'PATCH', 'action'=> ['App\Http\Controllers\AdminEventsController@update',$event->id]]) !!}
+                          {!! Form::model($event, ['method'=>'PATCH', 'action'=> ['App\Http\Controllers\AdminEventsController@update',$event->id]]) !!}
 
 
-                        <div class="form-row">
+                          <div class="form-row">
 
-                          <div class="form-group col-md-12">
-                            {!! Form::label('event_type', 'Event Type') !!}
-                            {!! Form::select('event_type', ['class' =>'Class', 'event'=>'Event']  , 'class' , ['class'=>'form-control col-4'])!!}
-                          </div>
+                            <div class="form-group col-md-12">
+                              {!! Form::label('event_type', 'Event Type') !!}
+                              {!! Form::select('event_type', ['class' =>'Class', 'event'=>'Event']  , 'class' , ['class'=>'form-control col-4'])!!}
+                            </div>
 
-                          <div class="form-group col-md-6">
-                            {!! Form::label('event_name', 'Event Name') !!}
-                            {!! Form::text('event_name', null, ['class'=>'form-control'])!!}
-                          </div>
+                            <div class="form-group col-md-6">
+                              {!! Form::label('event_name', 'Event Name') !!}
+                              {!! Form::text('event_name', null, ['class'=>'form-control'])!!}
+                            </div>
 
-                          <div class="form-group col-md-12">
-                            {!! Form::label('event_info', 'Information / Address') !!}
-                            {!! Form::textarea('event_info', null, ['class'=>'form-control', 'rows' => 3, 'cols' => 60])!!}
-                          </div>
+                            <div class="form-group col-md-12">
+                              {!! Form::label('event_info', 'Information / Address') !!}
+                              {!! Form::textarea('event_info', null, ['class'=>'form-control', 'rows' => 3, 'cols' => 60])!!}
+                            </div>
 
-                          <div class="form-group col-md-6">
-                            {!! Form::label('date', 'Date') !!}
-                            {!! Form::date('date', null, ['class'=>'form-control'])!!}
-                          </div>
+                            <div class="form-group col-md-6">
+                              {!! Form::label('date', 'Date') !!}
+                              {!! Form::date('date', null, ['class'=>'form-control'])!!}
+                            </div>
 
-                          <div class="form-group col-md-12">
-                            {!! Form::label('start_time','Time: ') !!} <br>
-                            {!! Form::time('start_time', null, ['class'=>'form-control col-3 d-inline'])!!} to
-                            {!! Form::time('end_time', null, ['class'=>'form-control col-3 d-inline'])!!}
+                            <div class="form-group col-md-12">
+                              {!! Form::label('start_time','Time: ') !!} <br>
+                              {!! Form::time('start_time', null, ['class'=>'form-control col-3 d-inline'])!!} to
+                              {!! Form::time('end_time', null, ['class'=>'form-control col-3 d-inline'])!!}
+                            </div>
                           </div>
                         </div>
-                      </div>
 
-                      <div class="modal-footer">
-                        {{-- <button type="button" class="btn btn-success">Save changes</button> --}}
-                        {!! Form::submit('Save changes', ['class'=>'btn btn-success']) !!}
+                        <div class="modal-footer">
+                          {{-- <button type="button" class="btn btn-success">Save changes</button> --}}
+                          {!! Form::submit('Save changes', ['class'=>'btn btn-success']) !!}
 
-                        {!! Form::close() !!}
-                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                          {!! Form::close() !!}
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-                <!-- Delete Modal -->
-                <div class="modal fade" id="delete{{ $event->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                  <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                        </button>
-                      </div>
-                      <div class="modal-body">
-                        Do you really want to delete these records? This process cannot be undone.
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
-
-                        {!! Form::open(['method'=>'DELETE', 'action'=> ['App\Http\Controllers\AdminEventsController@destroy',$event->id]]) !!}
-                        <div class="form-group">
-                          {!! Form::submit('Delete Event', ['class'=>'btn btn-danger']) !!}
+                  <!-- Delete Modal -->
+                  <div class="modal fade" id="delete{{ $event->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Are you sure?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
                         </div>
-                        {!! Form::close() !!}
+                        <div class="modal-body">
+                          Do you really want to delete these records? This process cannot be undone.
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
 
-                        {{-- <button type="button" class="btn btn-danger">Save changes</button> --}}
+                          {!! Form::open(['method'=>'DELETE', 'action'=> ['App\Http\Controllers\AdminEventsController@destroy',$event->id]]) !!}
+                          <div class="form-group">
+                            {!! Form::submit('Delete Event', ['class'=>'btn btn-danger']) !!}
+                          </div>
+                          {!! Form::close() !!}
+
+                          {{-- <button type="button" class="btn btn-danger">Save changes</button> --}}
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
 
-              @endforeach
+                @endforeach
+              </tbody>
             </table>
           </div>
         </div>
